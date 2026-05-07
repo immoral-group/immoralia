@@ -1,0 +1,178 @@
+'use client';
+
+import { useMemo, useState, useEffect } from 'react';
+import SearchBar from './SearchBar';
+import FeaturedArticle from './FeaturedArticle';
+import ArticleCard from './ArticleCard';
+import { motion } from 'motion/react';
+
+type Articulo = {
+  id: string;
+  titular: string;
+  slug: string;
+  meta_description: string | null;
+  imagen_url: string | null;
+  categoria: string | null;
+  fecha_publicacion: string | null;
+};
+
+export default function BlogList({ articulos }: { articulos: Articulo[] }) {
+  const [query, setQuery] = useState('');
+
+  // Cmd/Ctrl+K to focus search
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const input = document.querySelector<HTMLInputElement>(
+          'input[aria-label="Buscar artículos"]'
+        );
+        input?.focus();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  const trimmed = query.trim().toLowerCase();
+  const isSearching = trimmed.length > 0;
+
+  const filtered = useMemo(() => {
+    if (!isSearching) return articulos;
+    return articulos.filter((a) => {
+      const haystack = [a.titular, a.meta_description, a.categoria]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+      return haystack.includes(trimmed);
+    });
+  }, [articulos, trimmed, isSearching]);
+
+  const [featured, ...rest] = articulos;
+
+  return (
+    <>
+      <SearchBar
+        value={query}
+        onChange={setQuery}
+        resultsCount={isSearching ? filtered.length : undefined}
+        totalCount={articulos.length}
+      />
+
+      {!isSearching ? (
+        <>
+          {featured && <FeaturedArticle articulo={featured} />}
+          {rest.length > 0 && (
+            <ArchiveSection articulos={rest} title="Más artículos" countLabel={rest.length} />
+          )}
+        </>
+      ) : filtered.length > 0 ? (
+        <ArchiveSection
+          articulos={filtered}
+          title="Resultados"
+          countLabel={filtered.length}
+        />
+      ) : (
+        <NoResults query={query} onClear={() => setQuery('')} />
+      )}
+    </>
+  );
+}
+
+function ArchiveSection({
+  articulos,
+  title,
+  countLabel,
+}: {
+  articulos: Articulo[];
+  title: string;
+  countLabel: number;
+}) {
+  return (
+    <section className="px-6 mb-32">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#3B80DF]" />
+              <span
+                className="text-xs tracking-[0.25em] text-white/50 uppercase"
+                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              >
+                Archivo
+              </span>
+            </div>
+            <h2
+              className="text-3xl md:text-4xl text-white tracking-tight"
+              style={{
+                fontFamily: 'Lexend, sans-serif',
+                fontWeight: 100,
+                letterSpacing: '-0.025em',
+              }}
+            >
+              {title}
+            </h2>
+          </div>
+          <span
+            className="hidden md:block text-sm text-white/40"
+            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          >
+            {countLabel} {countLabel === 1 ? 'pieza' : 'piezas'}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {articulos.map((articulo, i) => (
+            <ArticleCard key={articulo.id} articulo={articulo} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NoResults({ query, onClear }: { query: string; onClear: () => void }) {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="px-6 mb-32"
+    >
+      <div className="max-w-3xl mx-auto">
+        <div className="relative overflow-hidden rounded-3xl border border-white/8 bg-white/[0.02] p-12 md:p-16 text-center">
+          <div
+            className="text-xs tracking-[0.25em] text-white/40 uppercase mb-4"
+            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          >
+            Sin resultados
+          </div>
+          <h2
+            className="text-3xl md:text-4xl text-white mb-3 tracking-tight"
+            style={{
+              fontFamily: 'Lexend, sans-serif',
+              fontWeight: 900,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Nada para «{query}»
+          </h2>
+          <p
+            className="text-white/55 max-w-md mx-auto mb-8"
+            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          >
+            Prueba con otra palabra o limpia la búsqueda para ver el archivo
+            completo.
+          </p>
+          <button
+            onClick={onClear}
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:border-[#00ffff]/50 text-white/80 hover:text-[#00ffff] transition-all duration-300 text-sm"
+            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          >
+            Limpiar búsqueda
+          </button>
+        </div>
+      </div>
+    </motion.section>
+  );
+}

@@ -1,0 +1,205 @@
+/* Blog — premium dark theme matched to the LP */
+@import "tailwindcss";
+
+:root {
+  --blog-bg: #000000;
+  --blog-text: #ffffff;
+  --blog-text-muted: rgba(255, 255, 255, 0.6);
+  --blog-text-subtle: rgba(255, 255, 255, 0.4);
+  --blog-accent: #00ffff;
+  --blog-accent-blue: #3B80DF;
+  --blog-card-bg: rgba(255, 255, 255, 0.03);
+  --blog-card-border: rgba(59, 128, 223, 0.18);
+  --blog-card-border-hover: rgba(0, 255, 255, 0.5);
+  --blog-input-bg: rgba(255, 255, 255, 0.06);
+  --blog-input-border: rgba(255, 255, 255, 0.12);
+
+  /* Legacy tokens kept for SubscribeForm/ArticuloImagen until they're rewritten */
+  --c-bg: #000000;
+  --c-bg-card: rgba(255, 255, 255, 0.03);
+  --c-text: #ffffff;
+  --c-text-muted: rgba(255, 255, 255, 0.6);
+  --c-accent: #00ffff;
+  --c-accent-bg: rgba(0, 255, 255, 0.08);
+  --c-border: rgba(59, 128, 223, 0.18);
+  --c-input-bg: rgba(255, 255, 255, 0.06);
+  --c-input-text: #ffffff;
+  --c-btn-bg: #00ffff;
+  --c-btn-text: #000000;
+  --c-header-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Scope the dark background to the blog shell so it never bleeds into other
+   route groups. Avoids overriding the LP body background. */
+.blog-shell {
+  background: var(--blog-bg);
+  color: var(--blog-text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Premium prose styling for article body (HTML coming from Supabase) */
+.article-body {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  letter-spacing: -0.005em;
+}
+.article-body > p {
+  margin-bottom: 1.75rem;
+}
+.article-body > p:first-of-type::first-letter {
+  font-size: 3.75rem;
+  font-weight: 900;
+  float: left;
+  line-height: 0.9;
+  margin-right: 0.6rem;
+  margin-top: 0.4rem;
+  color: var(--blog-accent);
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+.article-body h2 {
+  font-size: 1.875rem;
+  font-weight: 900;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--blog-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.article-body h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--blog-text);
+  letter-spacing: -0.015em;
+}
+.article-body a {
+  color: var(--blog-accent);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: opacity 0.2s ease;
+}
+.article-body a:hover {
+  opacity: 0.7;
+}
+.article-body strong {
+  color: var(--blog-text);
+  font-weight: 700;
+}
+.article-body em {
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+}
+.article-body ul,
+.article-body ol {
+  margin: 0 0 1.75rem 0;
+  padding-left: 1.5rem;
+}
+.article-body li {
+  margin-bottom: 0.6rem;
+}
+.article-body ul > li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.25rem;
+}
+.article-body ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blog-accent-blue);
+  box-shadow: 0 0 12px rgba(59, 128, 223, 0.6);
+}
+.article-body blockquote {
+  border-left: 3px solid var(--blog-accent);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 2.5rem 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 300;
+}
+.article-body code {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.9em;
+  color: var(--blog-accent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(59, 128, 223, 0.4), transparent);
+  margin: 3rem 0;
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(120deg, #ffffff 0%, #3B80DF 50%, #00ffff 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Card glow on hover */
+.card-glow {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 30%, rgba(0, 255, 255, 0.6), rgba(59, 128, 223, 0.6), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer effect on featured */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.08), transparent);
+  animation: shimmer 3s infinite;
+}
