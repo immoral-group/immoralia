@@ -21,10 +21,9 @@ function ErrorState({ message }: { message: string }) {
 export default async function ValidarPage({
   searchParams,
 }: {
-  searchParams: { a?: string; v?: string }
+  searchParams: Promise<{ a?: string; v?: string }>
 }) {
-  const articuloId = searchParams.a
-  const voterSlack = searchParams.v
+  const { a: articuloId, v: voterSlack } = await searchParams
 
   if (!articuloId || !voterSlack) {
     return <ErrorState message="Enlace inválido" />
