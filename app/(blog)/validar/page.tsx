@@ -43,7 +43,7 @@ export default async function ValidarPage({
 
   const { data: articulo } = await supabaseServer
     .from('articulos')
-    .select('id, titular, slug, categoria, resumen_email, cuerpo, estado')
+    .select('id, titular, slug, categoria, resumen_email, cuerpo, estado, imagen_url')
     .eq('id', articuloId)
     .single()
 
@@ -87,6 +87,7 @@ export default async function ValidarPage({
             resumen_email: articulo.resumen_email,
             cuerpo: articulo.cuerpo,
             slug: articulo.slug,
+            imagen_url: articulo.imagen_url ?? null,
           }}
           voterSlack={voterSlack}
           existingVote={votoExistente ?? null}

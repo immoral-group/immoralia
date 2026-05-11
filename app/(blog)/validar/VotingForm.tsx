@@ -11,6 +11,7 @@ interface VotingFormProps {
     resumen_email: string
     cuerpo: string
     slug: string
+    imagen_url: string | null
   }
   voterSlack: string
   existingVote?: {
@@ -102,6 +103,17 @@ export default function VotingForm({
       <h1 className="text-2xl font-bold mb-6 leading-snug">
         {articulo.titular}
       </h1>
+
+      {articulo.imagen_url && (
+        <div className="mb-8 rounded-xl overflow-hidden">
+          <img
+            src={articulo.imagen_url}
+            alt={articulo.titular}
+            style={{ width: '100%', display: 'block', maxHeight: '300px', objectFit: 'cover' }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+          />
+        </div>
+      )}
 
       <div
         className="prose prose-sm max-w-none mb-10"
