@@ -70,27 +70,6 @@ export default async function ArticuloPage({
             className="article-body"
             dangerouslySetInnerHTML={{ __html: articulo.cuerpo || '' }}
           />
-
-          {articulo.fuente_original_medio && articulo.fuente_original_url && (
-            <div className="mt-16 pt-8 border-t border-white/10">
-              <p
-                className="text-xs tracking-[0.18em] text-white/35 uppercase mb-2"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
-              >
-                Fuente original
-              </p>
-              <a
-                href={articulo.fuente_original_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/70 hover:text-[#00ffff] transition-colors duration-300 no-underline"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
-              >
-                {articulo.fuente_original_medio}
-                <span className="text-[#00ffff]">↗</span>
-              </a>
-            </div>
-          )}
         </div>
       </article>
 
