@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
-import '../blog/blog-globals.css';
+import '../(blog)/blog-globals.css';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogBackground from '@/components/blog/backgrounds/BlogBackgroundEditorial';
 import VerticalPylon from '@/components/news/VerticalPylon';
