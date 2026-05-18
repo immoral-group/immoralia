@@ -13,6 +13,7 @@ async function getArticulos() {
       'id, titular, slug, meta_description, imagen_url, categoria, fecha_publicacion'
     )
     .eq('estado', 'publicado')
+    .eq('vertical_id', process.env.VERTICAL_ID!)
     .order('fecha_publicacion', { ascending: false });
   return data || [];
 }

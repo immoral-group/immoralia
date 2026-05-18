@@ -17,6 +17,7 @@ async function getArticulo(slug: string) {
     .select('*')
     .eq('slug', slug)
     .eq('estado', 'publicado')
+    .eq('vertical_id', process.env.VERTICAL_ID!)
     .single();
   return data;
 }
@@ -28,6 +29,7 @@ async function getRelacionados(currentId: string) {
       'id, titular, slug, meta_description, imagen_url, categoria, fecha_publicacion'
     )
     .eq('estado', 'publicado')
+    .eq('vertical_id', process.env.VERTICAL_ID!)
     .neq('id', currentId)
     .order('fecha_publicacion', { ascending: false })
     .limit(3);

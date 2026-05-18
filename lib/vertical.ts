@@ -8,7 +8,7 @@ export const getVerticalConfig = cache(async () => {
   const { data } = await supabase
     .from('verticales_panel')
     .select('*')
-    .eq('id', verticalId)
+    .eq('vertical_id', verticalId)
     .single()
 
   return data ?? null
