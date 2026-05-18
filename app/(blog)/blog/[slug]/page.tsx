@@ -6,6 +6,8 @@ import ReadingProgress from '@/components/blog/ReadingProgress';
 import SubscribeCTA from '@/components/blog/SubscribeCTA';
 import ArticleCard from '@/components/blog/ArticleCard';
 import { Footer } from '@/components/Footer';
+import type { Metadata } from 'next';
+import { getVerticalConfig } from '@/lib/vertical';
 
 export const revalidate = 3600;
 
@@ -39,6 +41,65 @@ function readingMinutesFromHtml(html: string | null | undefined): number {
   return Math.max(1, Math.round(words / 220));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const [articulo, vertical] = await Promise.all([
+    getArticulo(slug),
+    getVerticalConfig(),
+  ])
+
+  if (!articulo) return { title: 'Artículo no encontrado' }
+
+  const siteTitle  = vertical?.seo_site_title || 'Immoralia'
+  const title      = articulo.seo_title || articulo.titular
+  const desc       = articulo.meta_description
+                     || articulo.cuerpo?.replace(/<[^>]*>/g, '').slice(0, 160)
+                     || ''
+  const ogImage    = articulo.og_image_url
+                     || articulo.imagen_url
+                     || vertical?.seo_default_og_image
+                     || null
+  const canonical  = articulo.canonical_url
+                     || `${process.env.NEXT_PUBLIC_APP_URL}/blog/${articulo.slug}`
+  const noindex    = articulo.noindex ?? false
+
+  return {
+    title:       `${title} | ${siteTitle}`,
+    description: desc,
+    robots: noindex
+      ? { index: false, follow: false }
+      : { index: true,  follow: true  },
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description:   desc,
+      url:           canonical,
+      siteName:      siteTitle,
+      images:        ogImage
+        ? [{
+            url:    ogImage,
+            width:  1200,
+            height: 630,
+            alt:    articulo.imagen_alt_text || title,
+          }]
+        : [],
+      type:          'article',
+      publishedTime: articulo.fecha_publicacion ?? undefined,
+      tags:          articulo.focus_keyword ? [articulo.focus_keyword] : [],
+    },
+    twitter: {
+      card:        'summary_large_image',
+      title,
+      description: desc,
+      images:      ogImage ? [ogImage] : [],
+    },
+  }
+}
+
 export default async function ArticuloPage({
   params,
 }: {
@@ -62,6 +123,7 @@ export default async function ArticuloPage({
         fecha_publicacion={articulo.fecha_publicacion}
         imagen_url={articulo.imagen_url}
         readingMinutes={minutos}
+        imagen_alt_text={articulo.imagen_alt_text}
       />
 
       <article className="px-6 mb-24">
@@ -82,14 +144,14 @@ export default async function ArticuloPage({
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#3B80DF]" />
                 <span
-                  className="text-xs tracking-[0.25em] text-white/50 uppercase"
+                  className="text-xs tracking-[0.25em] text-black/50 uppercase"
                   style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
                 >
                   Sigue leyendo
                 </span>
               </div>
               <h2
-                className="text-3xl md:text-4xl text-white tracking-tight"
+                className="text-3xl md:text-4xl text-black tracking-tight"
                 style={{
                   fontFamily: 'Lexend, sans-serif',
                   fontWeight: 100,
@@ -109,7 +171,7 @@ export default async function ArticuloPage({
             <div className="mt-12 flex justify-center">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/15 text-white/80 hover:border-[#00ffff]/50 hover:text-[#00ffff] transition-all duration-300 text-sm no-underline"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-black/15 text-black/80 hover:border-[#0077cc]/50 hover:text-[#0077cc] transition-all duration-300 text-sm no-underline"
                 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
               >
                 Ver todos los artículos

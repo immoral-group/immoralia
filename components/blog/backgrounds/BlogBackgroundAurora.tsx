@@ -9,10 +9,10 @@ export default function BlogBackgroundAurora() {
       {/* Soft aurora at top */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[100rem] h-[40rem] pointer-events-none">
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
             background:
-              'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(59,128,223,0.35) 0%, rgba(0,17,86,0.18) 35%, transparent 70%)',
+              'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(59,128,223,0.25) 0%, rgba(0,17,86,0.10) 35%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -20,10 +20,10 @@ export default function BlogBackgroundAurora() {
 
       {/* Dot grid */}
       <div
-        className="fixed inset-0 pointer-events-none opacity-[0.18]"
+        className="fixed inset-0 pointer-events-none opacity-[0.12]"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.25) 1px, transparent 0)',
+            'radial-gradient(circle at 1px 1px, rgba(17,17,17,0.35) 1px, transparent 0)',
           backgroundSize: '32px 32px',
           maskImage:
             'radial-gradient(ellipse 80% 60% at 50% 30%, black 30%, transparent 90%)',
@@ -36,7 +36,7 @@ export default function BlogBackgroundAurora() {
       <div className="fixed top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3B80DF]/30 to-transparent pointer-events-none" />
 
       {/* Bottom soft fade so reading area doesn't feel infinite */}
-      <div className="fixed bottom-0 inset-x-0 h-48 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div className="fixed bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#f8f8f6] to-transparent pointer-events-none" />
     </>
   );
 }

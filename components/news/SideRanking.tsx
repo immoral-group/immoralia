@@ -16,11 +16,11 @@ export default function SideRanking({
   if (articulos.length === 0) return null;
 
   return (
-    <aside className="border border-white/10 bg-white/[0.015] p-6">
+    <aside className="border border-black/10 bg-white rounded-lg p-6">
       <header className="flex items-center gap-2 mb-6">
-        <span className="w-2 h-2 bg-[#00ffff] inline-block" />
+        <span className="w-2 h-2 bg-[#0077cc] inline-block" />
         <h3
-          className="uppercase text-white"
+          className="uppercase text-black"
           style={{
             fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '11px',
@@ -40,7 +40,7 @@ export default function SideRanking({
               className="group flex gap-4 no-underline"
             >
               <span
-                className="shrink-0 text-[#3B80DF]/40 group-hover:text-[#00ffff] transition-colors duration-300 leading-none"
+                className="shrink-0 text-[#3B80DF]/30 group-hover:text-[#0077cc] transition-colors duration-300 leading-none"
                 style={{
                   fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
                   fontSize: '28px',
@@ -56,7 +56,7 @@ export default function SideRanking({
                   <CategoryBadge categoria={a.categoria} size="sm" />
                 </div>
                 <h4
-                  className="text-white group-hover:text-[#00ffff] transition-colors duration-300 leading-tight"
+                  className="text-black group-hover:text-[#0077cc] transition-colors duration-300 leading-tight"
                   style={{
                     fontFamily: 'Lexend, sans-serif',
                     fontWeight: 500,

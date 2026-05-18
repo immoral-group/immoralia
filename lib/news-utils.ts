@@ -63,13 +63,13 @@ export function formatNewsLongDate(d: string | null | undefined): string {
  * the same color (so the palette is stable across pages).
  */
 const CATEGORY_PALETTE = [
-  { fg: '#00ffff', bg: 'rgba(0,255,255,0.08)', border: 'rgba(0,255,255,0.35)' },   // cyan
-  { fg: '#3B80DF', bg: 'rgba(59,128,223,0.10)', border: 'rgba(59,128,223,0.40)' }, // blue
-  { fg: '#6EE7B7', bg: 'rgba(110,231,183,0.08)', border: 'rgba(110,231,183,0.35)' }, // mint
-  { fg: '#FBBF24', bg: 'rgba(251,191,36,0.08)', border: 'rgba(251,191,36,0.35)' },   // amber
-  { fg: '#F472B6', bg: 'rgba(244,114,182,0.08)', border: 'rgba(244,114,182,0.35)' }, // pink
-  { fg: '#A78BFA', bg: 'rgba(167,139,250,0.08)', border: 'rgba(167,139,250,0.35)' }, // purple
-  { fg: '#FB7185', bg: 'rgba(251,113,133,0.08)', border: 'rgba(251,113,133,0.35)' }, // coral
+  { fg: '#0891b2', bg: 'rgba(8,145,178,0.06)', border: 'rgba(8,145,178,0.30)' },   // cyan (teal-600)
+  { fg: '#1d4ed8', bg: 'rgba(29,78,216,0.06)', border: 'rgba(29,78,216,0.30)' },   // blue (blue-700)
+  { fg: '#047857', bg: 'rgba(4,120,87,0.06)', border: 'rgba(4,120,87,0.30)' },    // mint (emerald-700)
+  { fg: '#b45309', bg: 'rgba(180,83,9,0.06)', border: 'rgba(180,83,9,0.30)' },    // amber (amber-700)
+  { fg: '#be185d', bg: 'rgba(190,24,93,0.06)', border: 'rgba(190,24,93,0.30)' },   // pink (pink-700)
+  { fg: '#6d28d9', bg: 'rgba(109,40,217,0.06)', border: 'rgba(109,40,217,0.30)' }, // purple (purple-700)
+  { fg: '#be123c', bg: 'rgba(190,18,60,0.06)', border: 'rgba(190,18,60,0.30)' },   // coral (rose-700)
 ];
 
 export function categoryColors(categoria: string | null | undefined) {

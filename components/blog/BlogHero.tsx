@@ -13,7 +13,7 @@ export default function BlogHero({ count }: { count: number }) {
           className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-8"
           style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
         >
-          <span className="text-white/90">Lo que importa,</span>
+          <span className="text-black/90">Lo que importa,</span>
           <br />
           <span className="gradient-text font-black">cada día</span>
         </motion.h1>
@@ -22,7 +22,7 @@ export default function BlogHero({ count }: { count: number }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto leading-relaxed"
           style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
         >
           Inteligencia artificial aplicada a procesos de empresa. Sin ruido. Sin
@@ -37,18 +37,18 @@ export default function BlogHero({ count }: { count: number }) {
         >
           <div className="flex items-center gap-2">
             <span
-              className="text-3xl text-white"
+              className="text-3xl text-black"
               style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
             >
               {count}
             </span>
-            <span className="text-white/50" style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
+            <span className="text-black/50" style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
               {count === 1 ? 'artículo publicado' : 'artículos publicados'}
             </span>
           </div>
-          <div className="w-px h-6 bg-white/20" />
-          <div className="flex items-center gap-2 text-white/50">
-            <span className="w-2 h-2 rounded-full bg-[#00ffff] animate-pulse" />
+          <div className="w-px h-6 bg-black/20" />
+          <div className="flex items-center gap-2 text-black/50">
+            <span className="w-2 h-2 rounded-full bg-[#0077cc] animate-pulse" />
             <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>Lunes a viernes</span>
           </div>
         </motion.div>

@@ -9,10 +9,10 @@ export default function NewsTicker({ articulos }: { articulos: Articulo[] }) {
   if (items.length === 0) return null;
 
   return (
-    <div className="border-y border-white/10 bg-black/40 backdrop-blur-sm">
+    <div className="border-y border-black/8 bg-white/60 backdrop-blur-sm">
       <div className="max-w-[1400px] mx-auto flex items-stretch">
         <div
-          className="shrink-0 flex items-center gap-2 px-5 py-3 bg-[#00ffff] text-black"
+          className="shrink-0 flex items-center gap-2 px-5 py-3 bg-[#0077cc] text-white"
           style={{
             fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '11px',
@@ -20,7 +20,7 @@ export default function NewsTicker({ articulos }: { articulos: Articulo[] }) {
             fontWeight: 700,
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
           ÚLTIMA HORA
         </div>
 
@@ -33,7 +33,7 @@ export default function NewsTicker({ articulos }: { articulos: Articulo[] }) {
                 className="inline-flex items-center gap-3 group no-underline shrink-0"
               >
                 <span
-                  className="text-white/40 uppercase"
+                  className="text-black/40 uppercase"
                   style={{
                     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
                     fontSize: '10px',
@@ -42,9 +42,9 @@ export default function NewsTicker({ articulos }: { articulos: Articulo[] }) {
                 >
                   {formatNewsTimestamp(a.fecha_publicacion)}
                 </span>
-                <span className="w-1 h-1 rounded-full bg-white/15" />
+                <span className="w-1 h-1 rounded-full bg-black/15" />
                 <span
-                  className="text-white/80 group-hover:text-[#00ffff] transition-colors text-sm"
+                  className="text-black/80 group-hover:text-[#0077cc] transition-colors text-sm"
                   style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 400 }}
                 >
                   {a.titular}

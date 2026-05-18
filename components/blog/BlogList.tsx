@@ -96,14 +96,14 @@ function ArchiveSection({
             <div className="flex items-center gap-2 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#3B80DF]" />
               <span
-                className="text-xs tracking-[0.25em] text-white/50 uppercase"
+                className="text-xs tracking-[0.25em] text-black/50 uppercase"
                 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
               >
                 Archivo
               </span>
             </div>
             <h2
-              className="text-3xl md:text-4xl text-white tracking-tight"
+              className="text-3xl md:text-4xl text-black tracking-tight"
               style={{
                 fontFamily: 'Lexend, sans-serif',
                 fontWeight: 100,
@@ -114,7 +114,7 @@ function ArchiveSection({
             </h2>
           </div>
           <span
-            className="hidden md:block text-sm text-white/40"
+            className="hidden md:block text-sm text-black/40"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
           >
             {countLabel} {countLabel === 1 ? 'pieza' : 'piezas'}
@@ -140,15 +140,15 @@ function NoResults({ query, onClear }: { query: string; onClear: () => void }) {
       className="px-6 mb-32"
     >
       <div className="max-w-3xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl border border-white/8 bg-white/[0.02] p-12 md:p-16 text-center">
+        <div className="relative overflow-hidden rounded-3xl border border-black/8 bg-white p-12 md:p-16 text-center shadow-sm">
           <div
-            className="text-xs tracking-[0.25em] text-white/40 uppercase mb-4"
+            className="text-xs tracking-[0.25em] text-black/40 uppercase mb-4"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
           >
             Sin resultados
           </div>
           <h2
-            className="text-3xl md:text-4xl text-white mb-3 tracking-tight"
+            className="text-3xl md:text-4xl text-black mb-3 tracking-tight"
             style={{
               fontFamily: 'Lexend, sans-serif',
               fontWeight: 900,
@@ -158,7 +158,7 @@ function NoResults({ query, onClear }: { query: string; onClear: () => void }) {
             Nada para «{query}»
           </h2>
           <p
-            className="text-white/55 max-w-md mx-auto mb-8"
+            className="text-black/55 max-w-md mx-auto mb-8"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
           >
             Prueba con otra palabra o limpia la búsqueda para ver el archivo
@@ -166,7 +166,7 @@ function NoResults({ query, onClear }: { query: string; onClear: () => void }) {
           </p>
           <button
             onClick={onClear}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:border-[#00ffff]/50 text-white/80 hover:text-[#00ffff] transition-all duration-300 text-sm"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-black/15 hover:border-[#0077cc]/50 text-black/80 hover:text-[#0077cc] transition-all duration-300 text-sm"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
           >
             Limpiar búsqueda

@@ -12,14 +12,14 @@ export default function SectionLabel({
   accent?: string;
 }) {
   return (
-    <header className="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+    <header className="flex items-center justify-between border-b border-black/8 pb-4 mb-8">
       <div className="flex items-center gap-3">
         <span
           className="block w-3 h-3"
-          style={{ background: accent, boxShadow: `0 0 12px ${accent}` }}
+          style={{ background: accent }}
         />
         <h2
-          className="uppercase text-white"
+          className="uppercase text-black"
           style={{
             fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '12px',
@@ -32,7 +32,7 @@ export default function SectionLabel({
       </div>
       {typeof count === 'number' && (
         <span
-          className="text-white/35 uppercase"
+          className="text-black/40 uppercase"
           style={{
             fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '10px',

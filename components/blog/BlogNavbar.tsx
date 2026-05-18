@@ -28,7 +28,7 @@ export default function BlogNavbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'bg-black/80 backdrop-blur-xl border-b border-[#3B80DF]/20 shadow-2xl shadow-[#3B80DF]/5'
-          : 'bg-transparent'
+          : 'bg-black/60 backdrop-blur-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -38,7 +38,7 @@ export default function BlogNavbar() {
             <img src={logoImg} alt="Immoralia" className="h-7 w-auto" />
           </Link>
 
-          {/* Blog / Noticiero switcher */}
+          {/* Blog / News switcher */}
           <div className="flex items-center p-1 rounded-full bg-white/5 border border-white/10">
             <Link
               href="/blog"
@@ -60,7 +60,7 @@ export default function BlogNavbar() {
               }`}
               style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
             >
-              Noticiero
+              News
             </Link>
           </div>
 

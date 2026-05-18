@@ -14,12 +14,12 @@ export default function NewsHero({
   secondaries: Articulo[];
 }) {
   return (
-    <section className="border-b border-white/10">
+    <section className="border-b border-black/8">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-0">
         {/* Lead story */}
         <Link
           href={`/blog/${lead.slug}`}
-          className="lg:col-span-7 group no-underline border-b lg:border-b-0 lg:border-r border-white/10"
+          className="lg:col-span-7 group no-underline border-b lg:border-b-0 lg:border-r border-black/8"
         >
           <LeadCard articulo={lead} />
         </Link>
@@ -31,7 +31,7 @@ export default function NewsHero({
               key={a.id}
               href={`/blog/${a.slug}`}
               className={`group no-underline ${
-                i < secondaries.length - 1 ? 'border-b border-white/10' : ''
+                i < secondaries.length - 1 ? 'border-b border-black/8' : ''
               }`}
             >
               <SecondaryCard articulo={a} index={i + 1} />
@@ -48,7 +48,7 @@ function LeadCard({ articulo }: { articulo: Articulo }) {
   const showImage = articulo.imagen_url && !imgFailed;
 
   return (
-    <article className="relative h-full min-h-[28rem] lg:min-h-[36rem] overflow-hidden bg-black">
+    <article className="relative h-full min-h-[28rem] lg:min-h-[36rem] overflow-hidden bg-slate-200">
       {showImage ? (
         <img
           src={articulo.imagen_url || ''}
@@ -57,7 +57,7 @@ function LeadCard({ articulo }: { articulo: Articulo }) {
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3B80DF]/30 via-[#001156]/60 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3B80DF]/20 via-blue-100/60 to-slate-200" />
       )}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
@@ -122,9 +122,9 @@ function SecondaryCard({
   const showImage = articulo.imagen_url && !imgFailed;
 
   return (
-    <article className="relative flex gap-5 p-5 md:p-7 hover:bg-white/[0.02] transition-colors duration-300 h-full">
+    <article className="relative flex gap-5 p-5 md:p-7 hover:bg-black/[0.02] transition-colors duration-300 h-full">
       <div
-        className="shrink-0 text-white/15 group-hover:text-[#00ffff]/40 transition-colors leading-none"
+        className="shrink-0 text-black/15 group-hover:text-[#0077cc]/40 transition-colors leading-none"
         style={{
           fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
           fontSize: '32px',
@@ -135,7 +135,7 @@ function SecondaryCard({
         {String(index).padStart(2, '0')}
       </div>
 
-      <div className="shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden bg-gradient-to-br from-[#3B80DF]/20 to-black">
+      <div className="shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden bg-gradient-to-br from-[#3B80DF]/15 to-slate-200">
         {showImage ? (
           <img
             src={articulo.imagen_url || ''}
@@ -144,7 +144,7 @@ function SecondaryCard({
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#3B80DF]/30 to-black" />
+          <div className="w-full h-full bg-gradient-to-br from-[#3B80DF]/20 to-slate-200" />
         )}
       </div>
 
@@ -153,12 +153,12 @@ function SecondaryCard({
           <CategoryBadge categoria={articulo.categoria} size="sm" />
           <Timestamp
             date={articulo.fecha_publicacion}
-            className="text-white/40"
+            className="text-black/40"
           />
         </div>
 
         <h2
-          className="text-white group-hover:text-[#00ffff] transition-colors duration-300 leading-snug"
+          className="text-black group-hover:text-[#0077cc] transition-colors duration-300 leading-snug"
           style={{
             fontFamily: 'Lexend, sans-serif',
             fontWeight: 700,

@@ -31,7 +31,7 @@ export default async function NewsPage() {
         <div className="px-6 mb-32">
           <div className="max-w-3xl mx-auto text-center py-24">
             <p
-              className="text-white/45 max-w-md mx-auto"
+              className="text-black/45 max-w-md mx-auto"
               style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
             >
               Estamos preparando la primera tirada del noticiero.
@@ -60,7 +60,7 @@ export default async function NewsPage() {
       <NewsHero lead={lead} secondaries={secondaries} />
 
       {/* Big two-up + ranking sidebar */}
-      <section className="border-b border-white/10">
+      <section className="border-b border-black/8">
         <div className="max-w-[1400px] mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-8">
             <SectionLabel label="Análisis · Producto" accent="#3B80DF" />
@@ -75,7 +75,7 @@ export default async function NewsPage() {
                 <SectionLabel
                   label="Más historias"
                   count={grid.length}
-                  accent="#00ffff"
+                  accent="#0077cc"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                   {grid.map((a) => (
@@ -91,11 +91,11 @@ export default async function NewsPage() {
 
             {/* Newsletter mini-CTA */}
             <aside
-              className="border border-[#00ffff]/30 p-6"
-              style={{ background: 'linear-gradient(135deg, rgba(0,255,255,0.04), transparent)' }}
+              className="border border-[#0077cc]/20 p-6 rounded-lg bg-blue-50/50"
+              style={{  }}
             >
               <div
-                className="uppercase text-[#00ffff] mb-3"
+                className="uppercase text-[#0077cc] mb-3"
                 style={{
                   fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
                   fontSize: '11px',
@@ -106,7 +106,7 @@ export default async function NewsPage() {
                 Newsletter
               </div>
               <h3
-                className="text-white mb-3 leading-snug"
+                className="text-black mb-3 leading-snug"
                 style={{
                   fontFamily: 'Lexend, sans-serif',
                   fontWeight: 900,
@@ -117,18 +117,18 @@ export default async function NewsPage() {
                 Una noticia al día. La que importa.
               </h3>
               <p
-                className="text-white/55 text-sm mb-5 leading-relaxed"
+                className="text-black/55 text-sm mb-5 leading-relaxed"
                 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
               >
                 Sin ruido. Sin hype. Cancela cuando quieras.
               </p>
               <a
                 href="#suscribirse"
-                className="inline-flex items-center gap-2 text-[#00ffff] text-sm group no-underline"
+                className="inline-flex items-center gap-2 text-[#0077cc] text-sm group no-underline"
                 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 500 }}
               >
                 Suscribirme
-                <span className="block w-6 h-px bg-[#00ffff] group-hover:w-12 transition-all duration-500" />
+                <span className="block w-6 h-px bg-[#0077cc] group-hover:w-12 transition-all duration-500" />
               </a>
             </aside>
           </div>
@@ -137,14 +137,14 @@ export default async function NewsPage() {
 
       {/* Dense list of older pieces */}
       {more.length > 0 && (
-        <section className="border-b border-white/10">
+        <section className="border-b border-black/8">
           <div className="max-w-[1400px] mx-auto px-6 py-16">
             <SectionLabel
               label="Archivo"
               count={more.length}
               accent="#A78BFA"
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {more.map((a) => (
                 <NewsCard key={a.id} articulo={a} variant="minimal" />
               ))}
@@ -164,11 +164,11 @@ export default async function NewsPage() {
 function Masthead({ totalCount }: { totalCount: number }) {
   const today = formatNewsLongDate(new Date().toISOString());
   return (
-    <div className="border-b border-white/10">
+    <div className="border-b border-black/8">
       <div className="max-w-[1400px] mx-auto px-6 py-10 md:py-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <div
-            className="uppercase text-white/40 mb-3 flex items-center gap-3"
+            className="uppercase text-black/40 mb-3 flex items-center gap-3"
             style={{
               fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
               fontSize: '11px',
@@ -177,11 +177,11 @@ function Masthead({ totalCount }: { totalCount: number }) {
             }}
           >
             <span>EDICIÓN · {today.toUpperCase()}</span>
-            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span className="w-1 h-1 rounded-full bg-black/30" />
             <span>{totalCount} PIEZAS PUBLICADAS</span>
           </div>
           <h1
-            className="text-white tracking-tight"
+            className="text-black tracking-tight"
             style={{
               fontFamily: 'Lexend, sans-serif',
               fontWeight: 900,
@@ -190,15 +190,11 @@ function Masthead({ totalCount }: { totalCount: number }) {
               letterSpacing: '-0.05em',
             }}
           >
-            <span>El </span>
-            <span style={{ textDecoration: 'line-through', textDecorationThickness: '5px', textDecorationColor: 'rgba(255,255,255,0.6)' }}>
-              immoral
-            </span>
-            <span style={{ color: '#00ffff' }}>ia</span>
-            <span> Noticiero</span>
+            <span>immoralia </span>
+            <span style={{ color: '#0077cc' }}>News</span>
           </h1>
           <p
-            className="mt-4 text-white/55 max-w-xl text-base md:text-lg leading-relaxed"
+            className="mt-4 text-black/55 max-w-xl text-base md:text-lg leading-relaxed"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
           >
             IA aplicada a procesos de empresa. Sin ruido. Sin hype. Solo lo que
@@ -208,7 +204,7 @@ function Masthead({ totalCount }: { totalCount: number }) {
 
         <div className="hidden md:flex flex-col items-end gap-2 text-right">
           <div
-            className="uppercase text-white/40"
+            className="uppercase text-black/40"
             style={{
               fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
               fontSize: '10px',
@@ -217,8 +213,8 @@ function Masthead({ totalCount }: { totalCount: number }) {
           >
             Por Brian · Editorial Immoralia
           </div>
-          <div className="flex items-center gap-2 text-white/35">
-            <span className="w-1.5 h-1.5 bg-[#00ffff] inline-block animate-pulse" />
+          <div className="flex items-center gap-2 text-black/35">
+            <span className="w-1.5 h-1.5 bg-[#0077cc] inline-block animate-pulse" />
             <span
               className="uppercase"
               style={{
@@ -238,10 +234,10 @@ function Masthead({ totalCount }: { totalCount: number }) {
 
 function EmptyMasthead() {
   return (
-    <div className="border-b border-white/10 px-6 py-16">
+    <div className="border-b border-black/8 px-6 py-16">
       <div className="max-w-[1400px] mx-auto">
         <h1
-          className="text-white"
+          className="text-black"
           style={{
             fontFamily: 'Lexend, sans-serif',
             fontWeight: 900,
@@ -250,7 +246,7 @@ function EmptyMasthead() {
             letterSpacing: '-0.04em',
           }}
         >
-          Noticiero <span style={{ color: '#00ffff' }}>·</span> Próximamente
+          immoralia News <span style={{ color: '#0077cc' }}>·</span> Próximamente
         </h1>
       </div>
     </div>

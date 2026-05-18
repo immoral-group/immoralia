@@ -1,35 +1,35 @@
-/* Blog — premium dark theme matched to the LP */
+/* Blog — light theme */
 @import "tailwindcss";
 
 :root {
-  --blog-bg: #000000;
-  --blog-text: #ffffff;
-  --blog-text-muted: rgba(255, 255, 255, 0.6);
-  --blog-text-subtle: rgba(255, 255, 255, 0.4);
-  --blog-accent: #00ffff;
+  --blog-bg: #f8f8f6;
+  --blog-text: #111111;
+  --blog-text-muted: rgba(17, 17, 17, 0.6);
+  --blog-text-subtle: rgba(17, 17, 17, 0.4);
+  --blog-accent: #0077cc;
   --blog-accent-blue: #3B80DF;
-  --blog-card-bg: rgba(255, 255, 255, 0.03);
-  --blog-card-border: rgba(59, 128, 223, 0.18);
-  --blog-card-border-hover: rgba(0, 255, 255, 0.5);
-  --blog-input-bg: rgba(255, 255, 255, 0.06);
-  --blog-input-border: rgba(255, 255, 255, 0.12);
+  --blog-card-bg: rgba(255, 255, 255, 0.9);
+  --blog-card-border: rgba(59, 128, 223, 0.2);
+  --blog-card-border-hover: rgba(0, 119, 204, 0.5);
+  --blog-input-bg: rgba(255, 255, 255, 0.8);
+  --blog-input-border: rgba(17, 17, 17, 0.15);
 
   /* Legacy tokens kept for SubscribeForm/ArticuloImagen until they're rewritten */
-  --c-bg: #000000;
-  --c-bg-card: rgba(255, 255, 255, 0.03);
-  --c-text: #ffffff;
-  --c-text-muted: rgba(255, 255, 255, 0.6);
-  --c-accent: #00ffff;
-  --c-accent-bg: rgba(0, 255, 255, 0.08);
-  --c-border: rgba(59, 128, 223, 0.18);
-  --c-input-bg: rgba(255, 255, 255, 0.06);
-  --c-input-text: #ffffff;
-  --c-btn-bg: #00ffff;
-  --c-btn-text: #000000;
-  --c-header-border: rgba(255, 255, 255, 0.08);
+  --c-bg: #f8f8f6;
+  --c-bg-card: rgba(255, 255, 255, 0.9);
+  --c-text: #111111;
+  --c-text-muted: rgba(17, 17, 17, 0.6);
+  --c-accent: #0077cc;
+  --c-accent-bg: rgba(0, 119, 204, 0.08);
+  --c-border: rgba(59, 128, 223, 0.2);
+  --c-input-bg: rgba(255, 255, 255, 0.8);
+  --c-input-text: #111111;
+  --c-btn-bg: #0077cc;
+  --c-btn-text: #ffffff;
+  --c-header-border: rgba(17, 17, 17, 0.1);
 }
 
-/* Scope the dark background to the blog shell so it never bleeds into other
+/* Scope the light background to the blog shell so it never bleeds into other
    route groups. Avoids overriding the LP body background. */
 .blog-shell {
   background: var(--blog-bg);
@@ -41,7 +41,7 @@
 
 /* Premium prose styling for article body (HTML coming from Supabase) */
 .article-body {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(17, 17, 17, 0.85);
   font-weight: 300;
   font-size: 1.125rem;
   line-height: 1.85;
@@ -58,7 +58,7 @@
   margin-right: 0.6rem;
   margin-top: 0.4rem;
   color: var(--blog-accent);
-  text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  text-shadow: 0 0 30px rgba(0, 119, 204, 0.3);
 }
 .article-body h2 {
   font-size: 1.875rem;
@@ -94,7 +94,7 @@
   font-weight: 700;
 }
 .article-body em {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(17, 17, 17, 0.9);
   font-style: italic;
 }
 .article-body ul,
@@ -119,7 +119,7 @@
   height: 6px;
   border-radius: 50%;
   background: var(--blog-accent-blue);
-  box-shadow: 0 0 12px rgba(59, 128, 223, 0.6);
+  box-shadow: 0 0 12px rgba(59, 128, 223, 0.4);
 }
 .article-body blockquote {
   border-left: 3px solid var(--blog-accent);
@@ -127,12 +127,12 @@
   margin: 2.5rem 0;
   font-style: italic;
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(17, 17, 17, 0.8);
   font-weight: 300;
 }
 .article-body code {
-  background: rgba(0, 255, 255, 0.08);
-  border: 1px solid rgba(0, 255, 255, 0.15);
+  background: rgba(0, 119, 204, 0.07);
+  border: 1px solid rgba(0, 119, 204, 0.15);
   padding: 0.15rem 0.45rem;
   border-radius: 0.35rem;
   font-size: 0.9em;
@@ -142,13 +142,13 @@
 .article-body hr {
   border: none;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(59, 128, 223, 0.4), transparent);
+  background: linear-gradient(to right, transparent, rgba(59, 128, 223, 0.3), transparent);
   margin: 3rem 0;
 }
 
 /* Animated gradient text */
 .gradient-text {
-  background: linear-gradient(120deg, #ffffff 0%, #3B80DF 50%, #00ffff 100%);
+  background: linear-gradient(120deg, #111111 0%, #3B80DF 50%, #0077cc 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -172,8 +172,8 @@
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, transparent 30%, rgba(0, 255, 255, 0.6), rgba(59, 128, 223, 0.6), transparent 70%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  background: linear-gradient(135deg, transparent 30%, rgba(0, 119, 204, 0.5), rgba(59, 128, 223, 0.5), transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   opacity: 0;
@@ -200,6 +200,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
   animation: shimmer 3s infinite;
 }

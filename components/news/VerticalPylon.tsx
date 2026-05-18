@@ -18,12 +18,12 @@ export default function VerticalPylon() {
           fontWeight: 900,
           fontSize: '0.85rem',
           letterSpacing: '0.55em',
-          color: 'rgba(255,255,255,0.20)',
+          color: 'rgba(0,0,0,0.15)',
         }}
         className="uppercase"
       >
-        Immoralia <span style={{ color: '#00ffff', opacity: 0.5 }}>·</span>{' '}
-        Noticiero <span style={{ color: '#00ffff', opacity: 0.5 }}>·</span>{' '}
+        Immoralia <span style={{ color: '#0077cc', opacity: 0.3 }}>·</span>{' '}
+        News <span style={{ color: '#0077cc', opacity: 0.3 }}>·</span>{' '}
         IA aplicada a procesos de empresa
       </div>
     </div>

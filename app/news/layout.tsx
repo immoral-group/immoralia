@@ -11,9 +11,9 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: 'Noticiero · Immoralia',
+  title: 'News · Immoralia',
   description:
-    'Noticiero diario de Immoralia. IA aplicada a procesos de empresa.',
+    'News diario de Immoralia. IA aplicada a procesos de empresa.',
 };
 
 export default function NewsLayout({

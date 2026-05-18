@@ -28,17 +28,17 @@ export default function SubscribeForm() {
   if (estado === 'ok') {
     return (
       <div
-        className="flex items-start gap-4 p-5 rounded-xl bg-[#00ffff]/5 border border-[#00ffff]/30"
+        className="flex items-start gap-4 p-5 rounded-xl bg-emerald-50 border border-emerald-200/60"
         style={{ fontFamily: 'Lexend, sans-serif' }}
       >
-        <div className="shrink-0 w-10 h-10 rounded-full bg-[#00ffff]/15 flex items-center justify-center">
-          <Check className="w-5 h-5 text-[#00ffff]" />
+        <div className="shrink-0 w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+          <Check className="w-5 h-5 text-emerald-600" />
         </div>
         <div>
-          <p className="text-[#00ffff] text-lg" style={{ fontWeight: 700 }}>
+          <p className="text-emerald-900 text-lg" style={{ fontWeight: 700 }}>
             Apuntado. Hasta mañana.
           </p>
-          <p className="text-white/55 text-sm mt-1" style={{ fontWeight: 300 }}>
+          <p className="text-slate-600 text-sm mt-1" style={{ fontWeight: 300 }}>
             Revisa tu bandeja — te hemos enviado un email de bienvenida.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function SubscribeForm() {
   if (estado === 'error') {
     return (
       <div
-        className="p-4 rounded-xl bg-red-500/5 border border-red-500/30 text-red-400 text-sm"
+        className="p-4 rounded-xl bg-rose-50 border border-rose-200/60 text-rose-800 text-sm"
         style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
       >
         Algo ha fallado. Inténtalo de nuevo en un momento.
@@ -66,7 +66,7 @@ export default function SubscribeForm() {
           placeholder="tu@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full bg-white/[0.04] border border-white/10 text-white placeholder:text-white/30 px-5 py-3.5 rounded-xl text-sm outline-none focus:border-[#00ffff]/60 focus:bg-white/[0.06] focus:shadow-[0_0_30px_rgba(0,255,255,0.15)] transition-all duration-300"
+          className="w-full bg-white border border-[#3B80DF]/20 text-slate-900 placeholder:text-slate-400 px-5 py-3.5 rounded-xl text-sm outline-none focus:border-[#0077cc]/60 focus:bg-white focus:shadow-[0_0_30px_rgba(0,119,204,0.1)] transition-all duration-300"
           style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
         />
       </div>
