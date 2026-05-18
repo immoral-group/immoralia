@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { Mail } from 'lucide-react';
 import SubscribeForm from '@/components/SubscribeForm';
+import { blogConfig } from '@/lib/blog-config';
 
 export default function SubscribeCTA({
   variant = 'large',
@@ -24,13 +25,13 @@ export default function SubscribeCTA({
             className="text-2xl md:text-3xl text-black mb-2 tracking-tight"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
           >
-            Una noticia al día. La que importa.
+            {blogConfig.cta.compact.title}
           </h3>
           <p
             className="text-black/60 mb-6"
             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
           >
-            Sin ruido. Sin hype. Cancela cuando quieras.
+            {blogConfig.cta.compact.description}
           </p>
           <SubscribeForm />
         </div>
@@ -65,7 +66,7 @@ export default function SubscribeCTA({
                 className="text-xs tracking-[0.2em] text-[#0077cc] uppercase"
                 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
               >
-                Newsletter diaria
+                {blogConfig.cta.badge}
               </span>
             </div>
 
@@ -73,36 +74,34 @@ export default function SubscribeCTA({
               className="text-4xl md:text-5xl lg:text-6xl text-black leading-[1.05] tracking-tight mb-6"
               style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100, letterSpacing: '-0.025em' }}
             >
-              Una noticia al día.
+              {blogConfig.cta.title}
               <br />
-              <span className="gradient-text font-black">La que importa.</span>
+              <span className="gradient-text font-black">{blogConfig.cta.titleAlt}</span>
             </h2>
 
             <p
               className="text-lg text-black/65 mb-10 leading-relaxed max-w-xl"
               style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
             >
-              Sin ruido. Sin hype. Solo lo que cambia algo en tu empresa esta
-              semana. Cancela cuando quieras.
+              {blogConfig.cta.description}
             </p>
 
             <SubscribeForm />
 
-            <div className="mt-8 flex items-center gap-4 text-xs text-black/40">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0077cc]" />
-                <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
-                  Lunes a viernes
+            <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-black/40">
+              {blogConfig.cta.stats.map((stat, i) => (
+                <span key={i} className="flex items-center gap-4">
+                  <span className="flex items-center gap-2">
+                    {i === 0 && <span className="w-1.5 h-1.5 rounded-full bg-[#0077cc]" />}
+                    <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
+                      {stat}
+                    </span>
+                  </span>
+                  {i < blogConfig.cta.stats.length - 1 && (
+                    <span className="w-px h-3 bg-black/15" />
+                  )}
                 </span>
-              </span>
-              <span className="w-px h-3 bg-black/15" />
-              <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
-                3 minutos de lectura
-              </span>
-              <span className="w-px h-3 bg-black/15" />
-              <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
-                Sin spam
-              </span>
+              ))}
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { blogConfig } from '@/lib/blog-config';
 
 export default function BlogHero({ count }: { count: number }) {
   return (
@@ -13,9 +14,9 @@ export default function BlogHero({ count }: { count: number }) {
           className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-8"
           style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
         >
-          <span className="text-black/90">Lo que importa,</span>
+          <span className="text-black/90">{blogConfig.hero.title}</span>
           <br />
-          <span className="gradient-text font-black">cada día</span>
+          <span className="gradient-text font-black">{blogConfig.hero.titleAlt}</span>
         </motion.h1>
 
         <motion.p
@@ -25,8 +26,7 @@ export default function BlogHero({ count }: { count: number }) {
           className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto leading-relaxed"
           style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
         >
-          Inteligencia artificial aplicada a procesos de empresa. Sin ruido. Sin
-          hype. Solo lo que cambia algo en tu equipo esta semana.
+          {blogConfig.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -49,7 +49,7 @@ export default function BlogHero({ count }: { count: number }) {
           <div className="w-px h-6 bg-black/20" />
           <div className="flex items-center gap-2 text-black/50">
             <span className="w-2 h-2 rounded-full bg-[#0077cc] animate-pulse" />
-            <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>Lunes a viernes</span>
+            <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>{blogConfig.hero.frequency}</span>
           </div>
         </motion.div>
       </div>
