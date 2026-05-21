@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@Immoral-marketing/motor-blog": "^0.1.43",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
+    "@Immoral-marketing/motor-blog": "^0.1.48",
     "@mui/icons-material": "7.3.5",
     "@mui/material": "7.3.5",
     "@popperjs/core": "2.11.8",
