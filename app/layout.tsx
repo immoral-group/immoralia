@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { TrackingInjector } from '@Immoral-marketing/motor-blog';
 
 export const metadata: Metadata = {
   title: 'Immoralia',
@@ -15,6 +16,9 @@ export default function RootLayout({
     <html lang="es">
       <body style={{ margin: 0 }}>
         {children}
+        {process.env.VERTICAL_ID && (
+          <TrackingInjector verticalId={process.env.VERTICAL_ID} />
+        )}
 
         {/* GTM — capa 2: cobertura completa del dominio */}
         {/* NEXT_PUBLIC_GTM_ID debe tener el mismo valor que 
