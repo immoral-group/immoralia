@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .eq('vertical_id', verticalId)
     .eq('estado', 'publicado')
     .eq('noindex', false)
-    .order('fecha_publicacion', { ascending: false })
+    .order('fecha_publicacion', { ascending: false, nullsFirst: false })
     .limit(1000)
 
   const paginasEntries: MetadataRoute.Sitemap = (paginas || []).map(p => ({

@@ -31,7 +31,7 @@ async function getRelacionados(currentId: string) {
     .eq('estado', 'publicado')
     .eq('vertical_id', process.env.VERTICAL_ID!)
     .neq('id', currentId)
-    .order('fecha_publicacion', { ascending: false })
+    .order('fecha_publicacion', { ascending: false, nullsFirst: false })
     .limit(3);
   return data || [];
 }

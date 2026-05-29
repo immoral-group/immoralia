@@ -17,7 +17,7 @@ async function getArticulos() {
       'id, titular, slug, meta_description, imagen_url, categoria, fecha_publicacion'
     )
     .eq('estado', 'publicado')
-    .order('fecha_publicacion', { ascending: false });
+    .order('fecha_publicacion', { ascending: false, nullsFirst: false });
   return data || [];
 }
 
