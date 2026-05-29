@@ -11,6 +11,7 @@ import { blogConfig } from '@/lib/blog-config';
 //   - BlogBackgroundStarfield  → estrellas con parallax sutil
 //   - BlogBackgroundEditorial  → revista digital seria con grano y grid tenue
 import BlogBackground from '@/components/blog/backgrounds/BlogBackgroundAurora';
+import SubscribePopup from '@/components/blog/SubscribePopup';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -36,6 +37,7 @@ export default async function BlogLayout({
         <BlogBackground />
         <BlogNavbar />
         <div className="relative z-10">{children}</div>
+        <SubscribePopup />
 
         {/* Google Tag Manager */}
         {vertical?.google_tag_manager_id && (

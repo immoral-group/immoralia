@@ -22,6 +22,10 @@ export default function SubscribeForm() {
       return;
     }
 
+    // Guardar cookie por 365 días
+    const maxAge = 365 * 24 * 60 * 60;
+    document.cookie = `newsletter_subscribed=true; path=/; max-age=${maxAge}; SameSite=Lax`;
+
     setEstado('ok');
   }
 

@@ -1,10 +1,12 @@
 'use client';
 
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import SearchBar from './SearchBar';
 import FeaturedArticle from './FeaturedArticle';
 import ArticleCard from './ArticleCard';
+import SubscribeCTA from './SubscribeCTA';
 import { motion } from 'motion/react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type Articulo = {
   id: string;
@@ -18,6 +20,10 @@ type Articulo = {
 
 export default function BlogList({ articulos }: { articulos: Articulo[] }) {
   const [query, setQuery] = useState('');
+  const [showTopCTA, setShowTopCTA] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const listRef = useRef<HTMLDivElement>(null);
+  const isFirstMount = useRef(true);
 
   // Cmd/Ctrl+K to focus search
   useEffect(() => {
@@ -33,6 +39,28 @@ export default function BlogList({ articulos }: { articulos: Articulo[] }) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
+
+  // Verificar la cookie de suscripción en el montaje
+  useEffect(() => {
+    const isSubscribed = document.cookie
+      .split(';')
+      .some((item) => item.trim().startsWith('newsletter_subscribed='));
+    setShowTopCTA(!isSubscribed);
+  }, []);
+
+  // Reiniciar a la página 1 cuando cambia la consulta de búsqueda
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [query]);
+
+  // Scroll suave al inicio de la lista cuando cambia la página (excepto en el primer renderizado)
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [currentPage]);
 
   const trimmed = query.trim().toLowerCase();
   const isSearching = trimmed.length > 0;
@@ -50,8 +78,39 @@ export default function BlogList({ articulos }: { articulos: Articulo[] }) {
 
   const [featured, ...rest] = articulos;
 
+  // Calcular el número total de páginas
+  const totalPages = useMemo(() => {
+    if (isSearching) {
+      return Math.ceil(filtered.length / 10) || 1;
+    } else {
+      if (rest.length <= 9) return 1;
+      return 1 + Math.ceil((rest.length - 9) / 10);
+    }
+  }, [isSearching, filtered.length, rest.length]);
+
+  // Obtener los artículos para la página actual
+  const currentArchiveArticles = useMemo(() => {
+    if (isSearching) {
+      const start = (currentPage - 1) * 10;
+      return filtered.slice(start, start + 10);
+    } else {
+      if (currentPage === 1) {
+        return rest.slice(0, 9);
+      } else {
+        const start = 9 + (currentPage - 2) * 10;
+        return rest.slice(start, start + 10);
+      }
+    }
+  }, [isSearching, currentPage, filtered, rest]);
+
   return (
-    <>
+    <div ref={listRef} className="scroll-mt-24">
+      {showTopCTA && !isSearching && (
+        <div className="mb-8">
+          <SubscribeCTA />
+        </div>
+      )}
+
       <SearchBar
         value={query}
         onChange={setQuery}
@@ -61,21 +120,63 @@ export default function BlogList({ articulos }: { articulos: Articulo[] }) {
 
       {!isSearching ? (
         <>
-          {featured && <FeaturedArticle articulo={featured} />}
-          {rest.length > 0 && (
-            <ArchiveSection articulos={rest} title="Más artículos" countLabel={rest.length} />
+          {currentPage === 1 && featured && <FeaturedArticle articulo={featured} />}
+          {currentArchiveArticles.length > 0 && (
+            <ArchiveSection
+              articulos={currentArchiveArticles}
+              title="Más artículos"
+              countLabel={rest.length}
+            />
           )}
         </>
-      ) : filtered.length > 0 ? (
+      ) : currentArchiveArticles.length > 0 ? (
         <ArchiveSection
-          articulos={filtered}
+          articulos={currentArchiveArticles}
           title="Resultados"
           countLabel={filtered.length}
         />
       ) : (
         <NoResults query={query} onClear={() => setQuery('')} />
       )}
-    </>
+
+      {/* Paginación */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-2 mt-8 mb-24">
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="p-3 rounded-xl border border-black/10 hover:border-[#0077cc]/40 text-black/60 hover:text-[#0077cc] disabled:opacity-40 disabled:hover:text-black/60 disabled:hover:border-black/10 transition-all duration-300 disabled:cursor-not-allowed cursor-pointer bg-white"
+            aria-label="Página anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`w-11 h-11 rounded-xl flex items-center justify-center text-sm transition-all duration-300 font-semibold cursor-pointer border ${
+                currentPage === page
+                  ? 'bg-[#0077cc] text-white border-[#0077cc] shadow-md shadow-[#0077cc]/25'
+                  : 'bg-white border-black/10 text-black/60 hover:border-[#0077cc]/40 hover:text-[#0077cc]'
+              }`}
+              style={{ fontFamily: 'Lexend, sans-serif' }}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="p-3 rounded-xl border border-black/10 hover:border-[#0077cc]/40 text-black/60 hover:text-[#0077cc] disabled:opacity-40 disabled:hover:text-black/60 disabled:hover:border-black/10 transition-all duration-300 disabled:cursor-not-allowed cursor-pointer bg-white"
+            aria-label="Página siguiente"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+    </div>
   );
 }
 
