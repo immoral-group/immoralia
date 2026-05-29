@@ -8,8 +8,44 @@ import { blogConfig } from '@/lib/blog-config';
 export default function SubscribeCTA({
   variant = 'large',
 }: {
-  variant?: 'large' | 'compact';
+  variant?: 'large' | 'compact' | 'subtle';
 }) {
+  if (variant === 'subtle') {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="px-6 mb-8 max-w-3xl mx-auto"
+      >
+        <div className="relative overflow-hidden rounded-2xl border border-[#3B80DF]/15 bg-white/70 backdrop-blur-md p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Animated subtle orb */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#3B80DF]/10 rounded-full blur-2xl pointer-events-none" />
+
+          <div className="relative text-left flex-1">
+            <h4
+              className="text-base text-black flex items-center gap-2 mb-1"
+              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700 }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0077cc]" />
+              {blogConfig.cta.compact.title}
+            </h4>
+            <p
+              className="text-xs text-black/60"
+              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            >
+              {blogConfig.cta.compact.description}
+            </p>
+          </div>
+
+          <div className="relative w-full md:w-auto md:min-w-[320px] z-10">
+            <SubscribeForm />
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   if (variant === 'compact') {
     return (
       <motion.div

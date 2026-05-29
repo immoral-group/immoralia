@@ -81,34 +81,26 @@ export default function BlogList({ articulos }: { articulos: Articulo[] }) {
   // Calcular el número total de páginas
   const totalPages = useMemo(() => {
     if (isSearching) {
-      return Math.ceil(filtered.length / 10) || 1;
+      return Math.ceil(filtered.length / 9) || 1;
     } else {
-      if (rest.length <= 9) return 1;
-      return 1 + Math.ceil((rest.length - 9) / 10);
+      return Math.ceil(rest.length / 9) || 1;
     }
   }, [isSearching, filtered.length, rest.length]);
 
   // Obtener los artículos para la página actual
   const currentArchiveArticles = useMemo(() => {
+    const start = (currentPage - 1) * 9;
     if (isSearching) {
-      const start = (currentPage - 1) * 10;
-      return filtered.slice(start, start + 10);
+      return filtered.slice(start, start + 9);
     } else {
-      if (currentPage === 1) {
-        return rest.slice(0, 9);
-      } else {
-        const start = 9 + (currentPage - 2) * 10;
-        return rest.slice(start, start + 10);
-      }
+      return rest.slice(start, start + 9);
     }
   }, [isSearching, currentPage, filtered, rest]);
 
   return (
     <div ref={listRef} className="scroll-mt-24">
       {showTopCTA && !isSearching && (
-        <div className="mb-8">
-          <SubscribeCTA />
-        </div>
+        <SubscribeCTA variant="subtle" />
       )}
 
       <SearchBar
