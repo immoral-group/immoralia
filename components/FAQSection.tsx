@@ -41,13 +41,13 @@ export function FAQSection() {
           className="mb-16 text-left"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="text-4xl md:text-5xl lg:text-6xl text-[#001156] mb-6 tracking-tight"
           >
             Preguntas frecuentes
           </h2>
           <p 
-             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+             style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
              className="text-gray-600 text-lg max-w-2xl leading-relaxed"
           >
             Resolvemos tus dudas sobre cómo trabajamos, qué puedes esperar y cómo transformamos tu operativa diaria.
@@ -71,7 +71,7 @@ export function FAQSection() {
                 className="border-b border-gray-200 px-0 bg-transparent"
               >
                 <AccordionTrigger 
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 500 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 500 }}
                   className="text-[#001156] hover:text-[#001156]/80 hover:no-underline text-xl md:text-2xl py-8 [&>svg]:hidden group"
                 >
                   <div className="flex w-full justify-between items-center pr-2">
@@ -80,7 +80,7 @@ export function FAQSection() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent 
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                   className="text-gray-600 text-lg pb-8 leading-relaxed max-w-3xl"
                 >
                   {faq.answer}

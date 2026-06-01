@@ -61,7 +61,7 @@ export function BenefitsSection() {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#3B80DF]/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#001156]/10 rounded-full blur-3xl" />
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-black/5 rounded-full blur-2xl" />
             
             {/* Floating badge */}
@@ -69,9 +69,9 @@ export function BenefitsSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -top-4 -right-4 px-6 py-3 bg-[#3B80DF] rounded-full shadow-2xl shadow-[#3B80DF]/40 border border-white/20"
+              className="absolute -top-4 -right-4 px-6 py-3 bg-[#001156] rounded-full shadow-2xl shadow-[#001156]/40 border border-white/20"
             >
-              <p style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }} className="text-white text-sm">
+              <p style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }} className="text-white text-sm">
                 Anuncio real
               </p>
             </motion.div>
@@ -86,7 +86,7 @@ export function BenefitsSection() {
             >
               
               <h2
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                 className="text-4xl xl:text-5xl text-black mb-6"
               >
                 Impacto visual que se traduce en resultados
@@ -104,19 +104,19 @@ export function BenefitsSection() {
                     transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
                     className="group"
                   >
-                    <div className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:border-[#3B80DF]/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-[#3B80DF] to-[#2d6bc7] rounded-xl flex items-center justify-center shadow-lg shadow-[#3B80DF]/30">
+                    <div className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-200 hover:border-[#001156]/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-[#001156] to-[#030834] rounded-xl flex items-center justify-center shadow-lg shadow-[#001156]/30">
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <div className="flex-1 space-y-1">
                         <h3
-                          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
-                          className="text-lg text-black group-hover:text-[#3B80DF] transition-colors duration-300"
+                          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
+                          className="text-lg text-black group-hover:text-[#001156] transition-colors duration-300"
                         >
                           {benefit.title}
                         </h3>
                         <p
-                          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                           className="text-gray-600"
                         >
                           {benefit.description}

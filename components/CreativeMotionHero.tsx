@@ -9,8 +9,8 @@ export function CreativeMotionHero() {
       {/* Background with subtle 3D gradient */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a1525] to-black" />
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#3B80DF]/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-[#3B80DF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#001156]/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-[#00FFFF]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30">
           <div className="absolute inset-0">
             <iframe
@@ -31,7 +31,7 @@ export function CreativeMotionHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="max-w-4xl mx-auto bg-gradient-to-br from-white via-white to-gray-300 bg-clip-text text-transparent drop-shadow-2xl text-4xl xl:text-7xl xl:leading-18"
           >
             Anuncios en 3D que transforman la forma de publicitar tu marca
@@ -41,7 +41,7 @@ export function CreativeMotionHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="max-w-3xl mx-auto text-gray-300 drop-shadow-lg text-xl xl:text-1xl leading-relaxed"
           >
             Creamos piezas visuales dinámicas en 3D, potenciadas con inteligencia artificial, para marcas que buscan diferenciarse, generar impacto y mejorar su rendimiento en campañas digitales.
@@ -55,8 +55,8 @@ export function CreativeMotionHero() {
           className="pt-4 flex justify-center"
         >
           <button
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
-            className="group px-12 py-5 bg-[#3B80DF] text-white rounded-[10px] hover:bg-[#2d6bc7] transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center shadow-2xl shadow-[#3B80DF]/50 text-lg pointer-events-auto"
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
+            className="group px-12 py-5 bg-[#001156] hover:bg-[#030834] text-white border border-[#00FFFF]/50 rounded-[10px] transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center shadow-[0_0_30px_rgba(0,255,255,0.35)] text-lg pointer-events-auto"
             onClick={() => {
               document.getElementById('final-cta')?.scrollIntoView({ 
                 behavior: 'smooth',

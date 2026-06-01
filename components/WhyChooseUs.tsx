@@ -39,7 +39,7 @@ export function WhyChooseUs() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
           className="text-center mb-20 text-5xl"
         >
           Por qué elegirnos
@@ -57,19 +57,19 @@ export function WhyChooseUs() {
                 className="flex space-x-6"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-[#3B80DF] rounded-lg flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#001156] rounded-lg flex items-center justify-center">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 <div>
                   <h3
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                     className="mb-2"
                   >
                     {reason.title}
                   </h3>
                   <p
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                     className="text-gray-400"
                   >
                     {reason.description}
@@ -86,9 +86,9 @@ export function WhyChooseUs() {
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           className="text-center"
         >
-          <div className="inline-block bg-white/5 backdrop-blur-sm border border-[#3B80DF]/30 rounded-2xl p-12 max-w-4xl">
+          <div className="inline-block bg-white/5 backdrop-blur-sm border border-[#00FFFF]/30 rounded-2xl p-12 max-w-4xl">
             <blockquote
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             >
               "Diseñamos páginas que piensan en conversión y respiran marca."
             </blockquote>

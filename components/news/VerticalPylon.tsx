@@ -14,7 +14,7 @@ export default function VerticalPylon() {
         style={{
           writingMode: 'vertical-rl',
           transform: 'rotate(180deg)',
-          fontFamily: 'Lexend, sans-serif',
+          fontFamily: 'Roboto, sans-serif',
           fontWeight: 900,
           fontSize: '0.85rem',
           letterSpacing: '0.55em',
@@ -22,8 +22,8 @@ export default function VerticalPylon() {
         }}
         className="uppercase"
       >
-        Immoralia <span style={{ color: '#0077cc', opacity: 0.3 }}>·</span>{' '}
-        News <span style={{ color: '#0077cc', opacity: 0.3 }}>·</span>{' '}
+        Immoralia <span style={{ color: '#001156', opacity: 0.3 }}>·</span>{' '}
+        News <span style={{ color: '#001156', opacity: 0.3 }}>·</span>{' '}
         IA aplicada a procesos de empresa
       </div>
     </div>

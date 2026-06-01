@@ -19,7 +19,7 @@ export function ClientLogos() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           className="text-center text-gray-500 text-sm mb-12"
         >
           Marcas que ya convierten con nosotros
@@ -36,7 +36,7 @@ export function ClientLogos() {
               className="flex items-center justify-center"
             >
               <span
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                 className="text-gray-400 hover:text-black transition-colors text-xs tracking-wider"
               >
                 {logo}

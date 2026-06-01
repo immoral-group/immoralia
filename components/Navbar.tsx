@@ -25,7 +25,7 @@ export function Navbar() {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-black/90 backdrop-blur-xl border-b border-[#3B80DF]/20 shadow-2xl shadow-[#3B80DF]/10' 
+            ? 'bg-black/90 backdrop-blur-xl border-b border-[#001156]/30 shadow-2xl shadow-[#001156]/10' 
             : 'bg-transparent'
         }`}
       >
@@ -52,7 +52,7 @@ export function Navbar() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.35 }}
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="relative px-5 py-2.5 rounded-lg border border-white/20 text-white hover:border-[#00ffff]/60 hover:text-[#00ffff] transition-all duration-300 text-sm no-underline"
               >
                 Blog
@@ -64,7 +64,7 @@ export function Navbar() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
                 className="relative px-6 py-2.5 rounded-lg bg-[#00ffff] hover:bg-[#00e6e6] text-black transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,255,255,0.3)] flex items-center gap-2 text-sm no-underline"
               >
                 <MousePointerClick className="w-4 h-4" />
@@ -96,12 +96,12 @@ export function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed top-[70px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-[#3B80DF]/20 md:hidden shadow-2xl"
+          className="fixed top-[70px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-[#001156]/30 md:hidden shadow-2xl"
         >
           <div className="p-6 space-y-4">
             <a
               href="/blog"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               className="w-full px-6 py-3 border border-white/20 text-white rounded-lg flex items-center justify-center gap-2 no-underline"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -111,8 +111,8 @@ export function Navbar() {
               href="https://procesos.immoralia.es/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700 }}
-              className="w-full px-6 py-3 bg-[#3B80DF] text-white rounded-lg flex items-center justify-center gap-2 no-underline"
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 700 }}
+              className="w-full px-6 py-3 bg-[#00ffff] text-black rounded-lg flex items-center justify-center gap-2 no-underline shadow-[0_0_20px_rgba(0,255,255,0.3)]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <MousePointerClick className="w-5 h-5" />

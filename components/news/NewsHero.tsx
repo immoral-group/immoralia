@@ -57,7 +57,7 @@ function LeadCard({ articulo }: { articulo: Articulo }) {
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3B80DF]/20 via-blue-100/60 to-slate-200" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#001156]/20 via-blue-100/60 to-slate-200" />
       )}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
@@ -75,7 +75,7 @@ function LeadCard({ articulo }: { articulo: Articulo }) {
         <h1
           className="text-white group-hover:text-[#00ffff] transition-colors duration-300"
           style={{
-            fontFamily: 'Lexend, sans-serif',
+            fontFamily: 'Roboto, sans-serif',
             fontWeight: 900,
             fontSize: 'clamp(2rem, 4vw, 3.75rem)',
             lineHeight: 0.92,
@@ -89,7 +89,7 @@ function LeadCard({ articulo }: { articulo: Articulo }) {
         {articulo.meta_description && (
           <p
             className="mt-6 text-white/70 max-w-2xl text-base md:text-lg leading-relaxed"
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           >
             {articulo.meta_description}
           </p>
@@ -124,7 +124,7 @@ function SecondaryCard({
   return (
     <article className="relative flex gap-5 p-5 md:p-7 hover:bg-black/[0.02] transition-colors duration-300 h-full">
       <div
-        className="shrink-0 text-black/15 group-hover:text-[#0077cc]/40 transition-colors leading-none"
+        className="shrink-0 text-black/15 group-hover:text-[#001156]/40 transition-colors leading-none"
         style={{
           fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
           fontSize: '32px',
@@ -135,7 +135,7 @@ function SecondaryCard({
         {String(index).padStart(2, '0')}
       </div>
 
-      <div className="shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden bg-gradient-to-br from-[#3B80DF]/15 to-slate-200">
+      <div className="shrink-0 w-24 h-24 md:w-28 md:h-28 overflow-hidden bg-gradient-to-br from-[#001156]/15 to-slate-200">
         {showImage ? (
           <img
             src={articulo.imagen_url || ''}
@@ -144,7 +144,7 @@ function SecondaryCard({
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#3B80DF]/20 to-slate-200" />
+          <div className="w-full h-full bg-gradient-to-br from-[#001156]/20 to-slate-200" />
         )}
       </div>
 
@@ -158,9 +158,9 @@ function SecondaryCard({
         </div>
 
         <h2
-          className="text-black group-hover:text-[#0077cc] transition-colors duration-300 leading-snug"
+          className="text-black group-hover:text-[#001156] transition-colors duration-300 leading-snug"
           style={{
-            fontFamily: 'Lexend, sans-serif',
+            fontFamily: 'Roboto, sans-serif',
             fontWeight: 700,
             fontSize: 'clamp(1rem, 1.4vw, 1.25rem)',
             letterSpacing: '-0.015em',

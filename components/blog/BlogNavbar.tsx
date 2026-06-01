@@ -26,7 +26,7 @@ export default function BlogNavbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-[#3B80DF]/20 shadow-2xl shadow-[#3B80DF]/5'
+          ? 'bg-black/80 backdrop-blur-xl border-b border-[#00FFFF]/20 shadow-2xl shadow-[#00FFFF]/5'
           : 'bg-black/60 backdrop-blur-md'
       }`}
     >
@@ -51,7 +51,7 @@ export default function BlogNavbar() {
                     ? 'bg-[#00ffff]/15 text-[#00ffff] shadow-[0_0_20px_rgba(0,255,255,0.15)]'
                     : 'text-white/55 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 Blog
               </Link>
@@ -62,7 +62,7 @@ export default function BlogNavbar() {
                     ? 'bg-[#00ffff]/15 text-[#00ffff] shadow-[0_0_20px_rgba(0,255,255,0.15)]'
                     : 'text-white/55 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 News
               </Link>
@@ -76,7 +76,7 @@ export default function BlogNavbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#00ffff] hover:bg-[#00e6e6] text-black text-sm transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,255,255,0.25)] no-underline"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 {blogConfig.nav.cta.text}
               </a>

@@ -37,7 +37,7 @@ export function StatsSection() {
     }, [isInView, end, duration]);
 
     return (
-      <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}>
+      <span style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}>
         {count}{suffix}
       </span>
     );
@@ -47,8 +47,8 @@ export function StatsSection() {
     <section ref={ref} className="w-full py-24 px-8 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#3B80DF] rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#3B80DF] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#001156] rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#00FFFF] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -61,11 +61,11 @@ export function StatsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center space-y-2"
             >
-              <div className="text-5xl xl:text-6xl text-[#3B80DF] mb-2">
+              <div className="text-5xl xl:text-6xl text-[#00FFFF] mb-2 font-black">
                 <CountUpAnimation end={stat.value} suffix={stat.suffix} />
               </div>
               <p
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-white/80 text-lg"
               >
                 {stat.label}

@@ -144,10 +144,10 @@ export default async function ArticuloPage({
           <div className="max-w-7xl mx-auto">
             <div className="mb-10">
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#3B80DF]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#001156]" />
                 <span
                   className="text-xs tracking-[0.25em] text-black/50 uppercase"
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 >
                   Sigue leyendo
                 </span>
@@ -155,7 +155,7 @@ export default async function ArticuloPage({
               <h2
                 className="text-3xl md:text-4xl text-black tracking-tight"
                 style={{
-                  fontFamily: 'Lexend, sans-serif',
+                  fontFamily: 'Roboto, sans-serif',
                   fontWeight: 100,
                   letterSpacing: '-0.025em',
                 }}
@@ -173,8 +173,8 @@ export default async function ArticuloPage({
             <div className="mt-12 flex justify-center">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-black/15 text-black/80 hover:border-[#0077cc]/50 hover:text-[#0077cc] transition-all duration-300 text-sm no-underline"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-black/15 text-black/80 hover:border-[#001156]/50 hover:text-[#001156] transition-all duration-300 text-sm no-underline"
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 Ver todos los artículos
                 <span>→</span>

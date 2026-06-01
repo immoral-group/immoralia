@@ -33,7 +33,7 @@ export default function ArticuloImagen({
       {fuente && fuenteUrl && (
         <figcaption
           className="mt-3 text-xs text-white/35 text-right"
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
         >
           {'Imagen vía '}
           <a

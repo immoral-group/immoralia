@@ -67,13 +67,13 @@ function EmptyState() {
             </div>
             <h2
               className="text-3xl md:text-4xl text-white mb-4 tracking-tight"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.02em' }}
             >
               {blogConfig.emptyState.title}
             </h2>
             <p
               className="text-white/55 max-w-md mx-auto"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               {blogConfig.emptyState.description}
             </p>

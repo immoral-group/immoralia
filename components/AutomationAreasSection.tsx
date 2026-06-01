@@ -134,11 +134,11 @@ export function AutomationAreasSection() {
           className="text-center mb-16 lg:mb-24"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="text-4xl md:text-5xl lg:text-6xl text-[#001156] tracking-tight drop-shadow-lg"
           >
             Procesos típicos que <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ffff] to-[#3B80DF]">implementamos</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ffff] to-[#001156]">implementamos</span>
           </h2>
         </motion.div>
 
@@ -172,7 +172,7 @@ export function AutomationAreasSection() {
                   <div className="mb-8">
                     <p className="text-gray-400 text-sm font-medium mb-1 tracking-wider uppercase">{area.subtitle}</p>
                     <h3
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 600 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 600 }}
                       className="text-3xl text-white leading-tight"
                     >
                       {area.title}

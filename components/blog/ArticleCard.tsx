@@ -41,9 +41,9 @@ export default function ArticleCard({
       className="h-full"
     >
       <Link href={`/blog/${articulo.slug}`} className="block h-full no-underline group">
-        <article className="card-glow relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border border-[#3B80DF]/15 hover:border-[#0077cc]/40 shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1">
+        <article className="card-glow relative h-full flex flex-col overflow-hidden rounded-2xl bg-white border border-[#001156]/15 hover:border-[#00FFFF] shadow-sm hover:shadow-md transition-all duration-500 hover:-translate-y-1">
           {/* Image */}
-          <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#3B80DF]/10 via-slate-100 to-slate-200">
+          <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#001156]/10 via-slate-100 to-slate-200">
             {showImage ? (
               <>
                 <img
@@ -56,10 +56,10 @@ export default function ArticleCard({
               </>
             ) : (
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-[#3B80DF]/20 blur-3xl" />
+                <div className="w-32 h-32 rounded-full bg-[#001156]/20 blur-3xl" />
                 <span
                   className="absolute text-black/10 text-6xl"
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                 >
                   ia
                 </span>
@@ -70,7 +70,7 @@ export default function ArticleCard({
               <div className="absolute top-4 left-4">
                 <span
                   className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-black/10 text-black/80 text-[10px] tracking-[0.18em] uppercase"
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 >
                   {articulo.categoria}
                 </span>
@@ -78,7 +78,7 @@ export default function ArticleCard({
             )}
 
             <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md border border-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
-              <ArrowUpRight className="w-4 h-4 text-[#0077cc]" />
+              <ArrowUpRight className="w-4 h-4 text-[#001156]" />
             </div>
           </div>
 
@@ -86,14 +86,14 @@ export default function ArticleCard({
           <div className="p-6 flex flex-col flex-1">
             <div
               className="text-[11px] tracking-[0.18em] text-black/35 uppercase mb-3"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               {formatDate(articulo.fecha_publicacion)}
             </div>
 
             <h3
-              className="text-xl md:text-[1.35rem] text-black leading-snug tracking-tight mb-3 group-hover:text-[#0077cc] transition-colors duration-300"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, letterSpacing: '-0.02em' }}
+              className="text-xl md:text-[1.35rem] text-black leading-snug tracking-tight mb-3 group-hover:text-[#001156] transition-colors duration-300"
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 700, letterSpacing: '-0.02em' }}
             >
               {articulo.titular}
             </h3>
@@ -101,7 +101,7 @@ export default function ArticleCard({
             {articulo.meta_description && (
               <p
                 className="text-sm text-black/55 leading-relaxed line-clamp-3 flex-1"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 {articulo.meta_description}
               </p>
@@ -109,12 +109,12 @@ export default function ArticleCard({
 
             <div className="mt-5 pt-5 border-t border-black/8 flex items-center justify-between">
               <span
-                className="text-xs text-black/40 group-hover:text-[#0077cc] transition-colors duration-300"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                className="text-xs text-black/40 group-hover:text-[#001156] transition-colors duration-300"
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 Leer artículo
               </span>
-              <div className="w-7 h-px bg-black/10 group-hover:bg-[#0077cc]/60 group-hover:w-12 transition-all duration-500" />
+              <div className="w-7 h-px bg-black/10 group-hover:bg-[#001156]/60 group-hover:w-12 transition-all duration-500" />
             </div>
           </div>
         </article>

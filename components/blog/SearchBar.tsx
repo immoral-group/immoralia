@@ -42,7 +42,7 @@ export default function SearchBar({ value, onChange, resultsCount, totalCount }:
               onChange={(e) => onChange(e.target.value)}
               placeholder="Buscar en el archivo…"
               className="flex-1 bg-transparent outline-none text-white placeholder:text-white/30 text-base"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               aria-label="Buscar artículos"
             />
 
@@ -59,7 +59,7 @@ export default function SearchBar({ value, onChange, resultsCount, totalCount }:
 
             <kbd
               className="hidden md:inline-flex items-center px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/40 text-[10px] tracking-wider uppercase"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               ⌘K
             </kbd>
@@ -72,7 +72,7 @@ export default function SearchBar({ value, onChange, resultsCount, totalCount }:
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="mt-4 text-center text-sm text-white/45"
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           >
             {resultsCount === 0 ? (
               <span>

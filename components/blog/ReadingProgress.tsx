@@ -21,7 +21,7 @@ export default function ReadingProgress() {
       className="fixed top-0 left-0 h-[2px] z-[60] pointer-events-none"
       style={{
         width: `${progress}%`,
-        background: 'linear-gradient(to right, #3B80DF, #00ffff)',
+        background: 'linear-gradient(to right, #001156, #00ffff)',
         boxShadow: '0 0 12px rgba(0, 255, 255, 0.6)',
         transition: 'width 0.05s linear',
       }}

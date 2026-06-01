@@ -27,13 +27,13 @@ export function ProcessTimeline() {
           className="text-center mb-20"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="mb-4 text-5xl"
           >
             Cómo trabajamos
           </h2>
           <p
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="text-gray-600"
           >
             Un proceso simple, ágil y transparente
@@ -55,11 +55,11 @@ export function ProcessTimeline() {
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="w-24 h-24 bg-[#3B80DF] rounded-full flex items-center justify-center mb-4 z-10 shadow-lg shadow-[#3B80DF]/30 hover:scale-110 transition-transform duration-300">
+                  <div className="w-24 h-24 bg-[#001156] rounded-full flex items-center justify-center mb-4 z-10 shadow-lg shadow-[#001156]/30 hover:scale-110 transition-transform duration-300">
                     <Icon className="w-10 h-10 text-white" />
                   </div>
                   <p
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                     className="text-sm"
                   >
                     {stage.label}
@@ -74,7 +74,7 @@ export function ProcessTimeline() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           className="text-center mt-16 max-w-3xl mx-auto text-gray-700"
         >
           En solo 5 días, tu landing puede estar online, optimizada y lista para escalar tus campañas.

@@ -36,34 +36,34 @@ const TikTokIcon = () => (
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-[#3B80DF]/20 py-16 relative overflow-hidden">
+    <footer className="bg-black border-t border-[#001156]/30 py-16 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#3B80DF] rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00FFFF] rounded-full blur-[120px]" />
       </div>
       
       {/* Grid pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="w-full h-full" style={{
-          backgroundImage: 'linear-gradient(90deg, #3B80DF 1px, transparent 1px), linear-gradient(#3B80DF 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(90deg, #001156 1px, transparent 1px), linear-gradient(#001156 1px, transparent 1px)',
           backgroundSize: '60px 60px'
         }} />
       </div>
       
       <div className="max-w-[1600px] mx-auto px-6 lg:px-2 relative z-10">
         {/* Top Section - Transformation Message */}
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-12 pb-12 border-b border-[#3B80DF]/20">
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-12 pb-12 border-b border-[#001156]/20">
           {/* Left - Transformation Message */}
           <div>
             <h2 
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
               className="text-4xl xl:text-5xl mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
             >
               Lleva tu operativa<br />
               al siguiente nivel
             </h2>
             <p
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               className="text-gray-400 text-lg"
             >
               Automatización que escala tu negocio
@@ -73,13 +73,13 @@ export function Footer() {
           {/* Right - CTA Button */}
           <div className="flex justify-start md:justify-end">
             <div className="relative inline-block group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#3B80DF] to-[#2d6bc7] rounded-[10px] blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#001156] to-[#00FFFF] rounded-[10px] blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
               <a
                 href="https://immoral.marketing/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
-                className="relative block bg-gradient-to-r from-[#3B80DF] to-[#2d6bc7] text-white px-10 py-5 rounded-[10px] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#3B80DF]/30 text-sm"
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+                className="relative block bg-gradient-to-r from-[#001156] to-[#00FFFF] text-white px-10 py-5 rounded-[10px] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#001156]/30 text-sm font-bold"
               >
                 Visitar Immoral
               </a>
@@ -92,8 +92,8 @@ export function Footer() {
           {/* Left Column - Social Media */}
           <div className="space-y-6">
             <h3 
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
-              className="text-[#3B80DF] text-sm"
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+              className="text-[#00FFFF] text-sm font-bold uppercase tracking-wider"
             >
               Síguenos
             </h3>
@@ -103,7 +103,7 @@ export function Footer() {
                 href="https://wa.link/rb585t"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#3B80DF] hover:border-[#3B80DF]/50 hover:bg-[#3B80DF]/10 transition-all duration-200 group"
+                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#00FFFF] hover:border-[#00FFFF]/50 hover:bg-[#00FFFF]/10 transition-all duration-200 group"
                 aria-label="WhatsApp"
               >
                 <WhatsAppIcon />
@@ -113,7 +113,7 @@ export function Footer() {
                 href="https://www.instagram.com/immoral.marketing/"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#3B80DF] hover:border-[#3B80DF]/50 hover:bg-[#3B80DF]/10 transition-all duration-200 group"
+                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#00FFFF] hover:border-[#00FFFF]/50 hover:bg-[#00FFFF]/10 transition-all duration-200 group"
                 aria-label="Instagram"
               >
                 <InstagramIcon />
@@ -123,7 +123,7 @@ export function Footer() {
                 href="https://www.facebook.com/immoral.marketing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#3B80DF] hover:border-[#3B80DF]/50 hover:bg-[#3B80DF]/10 transition-all duration-200 group"
+                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#00FFFF] hover:border-[#00FFFF]/50 hover:bg-[#00FFFF]/10 transition-all duration-200 group"
                 aria-label="Facebook"
               >
                 <FacebookIcon />
@@ -133,7 +133,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/immoral-marketing/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#3B80DF] hover:border-[#3B80DF]/50 hover:bg-[#3B80DF]/10 transition-all duration-200 group"
+                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#00FFFF] hover:border-[#00FFFF]/50 hover:bg-[#00FFFF]/10 transition-all duration-200 group"
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon />
@@ -143,7 +143,7 @@ export function Footer() {
                 href="https://www.tiktok.com/@immoral.marketing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#3B80DF] hover:border-[#3B80DF]/50 hover:bg-[#3B80DF]/10 transition-all duration-200 group"
+                className="p-3 border border-white/10 rounded-full text-gray-400 hover:text-[#00FFFF] hover:border-[#00FFFF]/50 hover:bg-[#00FFFF]/10 transition-all duration-200 group"
                 aria-label="TikTok"
               >
                 <TikTokIcon />
@@ -154,8 +154,8 @@ export function Footer() {
           {/* Right Column - Location */}
           <div className="space-y-6">
             <h3 
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
-              className="text-[#3B80DF] text-sm"
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+              className="text-[#00FFFF] text-sm font-bold uppercase tracking-wider"
             >
               ¿Dónde estamos?
             </h3>
@@ -165,7 +165,7 @@ export function Footer() {
                 <MapPin className="w-6 h-6" />
               </div>
               <div 
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-gray-400 leading-relaxed"
               >
                 Paseo de Gràcia 12, 1º, 08007 Barcelona
@@ -175,7 +175,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 pt-8 border-t border-[#3B80DF]/20">
+        <div className="mt-16 pt-8 border-t border-[#001156]/20">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             {/* Brand Logo */}
             <div className="flex items-center">
@@ -196,14 +196,14 @@ export function Footer() {
             <div className="flex items-center gap-8">
               <a 
                 href="#" 
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
               >
                 Aviso legal
               </a>
               <a 
                 href="#" 
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
               >
                 Privacidad
@@ -214,7 +214,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="mt-8 text-center">
             <p 
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               className="text-gray-400 text-sm"
             >
               © {new Date().getFullYear()} Todos los derechos reservados.

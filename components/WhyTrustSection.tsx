@@ -36,8 +36,8 @@ export function WhyTrustSection() {
     <section ref={ref} className="w-full py-24 px-8 bg-white relative overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-[#3B80DF] rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-[#3B80DF] rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-[#00FFFF] rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-[#001156] rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -48,10 +48,10 @@ export function WhyTrustSection() {
           className="text-center mb-16"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="text-3xl lg:text-5xl max-w-4xl mx-auto text-[#001156] mb-4 leading-tight"
           >
-            Esto no va de “automatizar por automatizar”. <span className="text-[#3B80DF]">Va de control.</span>
+            Esto no va de “automatizar por automatizar”. <span className="font-black underline decoration-[#00FFFF] decoration-wavy">Va de control.</span>
           </h2>
         </motion.div>
 
@@ -73,13 +73,13 @@ export function WhyTrustSection() {
                     </div>
                     <div>
                       <h3
-                        style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 600 }}
+                        style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 600 }}
                         className="text-xl text-[#001156] mb-3 group-hover:text-white transition-colors duration-300"
                       >
                         {reason.title}
                       </h3>
                       <p
-                        style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                        style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                         className="text-[#001156]/80 text-base leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
                       >
                         {reason.description}

@@ -29,7 +29,7 @@ export default function NewsCard({
         href={`/blog/${articulo.slug}`}
         className="group no-underline block h-full"
       >
-        <article className="h-full bg-white/70 backdrop-blur-sm border border-[#3B80DF]/12 rounded-2xl p-5 hover:bg-white hover:border-[#0077cc]/35 hover:shadow-md hover:shadow-blue-900/5 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
+        <article className="h-full bg-white/70 backdrop-blur-sm border border-[#001156]/12 rounded-2xl p-5 hover:bg-white hover:border-[#00FFFF] hover:shadow-md hover:shadow-blue-900/5 hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-3 mb-3">
               <CategoryBadge categoria={articulo.categoria} size="sm" />
@@ -39,9 +39,9 @@ export default function NewsCard({
               />
             </div>
             <h3
-              className="text-black group-hover:text-[#0077cc] transition-colors duration-300 leading-snug"
+              className="text-black group-hover:text-[#001156] transition-colors duration-300 leading-snug"
               style={{
-                fontFamily: 'Lexend, sans-serif',
+                fontFamily: 'Roboto, sans-serif',
                 fontWeight: 700,
                 fontSize: '1.05rem',
                 letterSpacing: '-0.01em',
@@ -62,7 +62,7 @@ export default function NewsCard({
         className="group no-underline block"
       >
         <article className="grid grid-cols-[40%_1fr] gap-5 p-5 hover:bg-white/[0.02] transition-colors h-full">
-          <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#3B80DF]/10 to-slate-200">
+          <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#001156]/10 to-slate-200">
             {showImage ? (
               <img
                 src={articulo.imagen_url || ''}
@@ -71,7 +71,7 @@ export default function NewsCard({
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#3B80DF]/15 to-slate-200" />
+              <div className="w-full h-full bg-gradient-to-br from-[#001156]/15 to-slate-200" />
             )}
           </div>
           <div className="flex flex-col">
@@ -79,9 +79,9 @@ export default function NewsCard({
               <CategoryBadge categoria={articulo.categoria} size="sm" />
             </div>
             <h3
-              className="text-black group-hover:text-[#0077cc] transition-colors duration-300 leading-snug"
+              className="text-black group-hover:text-[#001156] transition-colors duration-300 leading-snug"
               style={{
-                fontFamily: 'Lexend, sans-serif',
+                fontFamily: 'Roboto, sans-serif',
                 fontWeight: 700,
                 fontSize: '1.05rem',
                 letterSpacing: '-0.015em',
@@ -106,7 +106,7 @@ export default function NewsCard({
       className="group no-underline block h-full"
     >
       <article className="flex flex-col h-full">
-        <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#3B80DF]/10 to-slate-200 mb-4">
+        <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#001156]/10 to-slate-200 mb-4">
           {showImage ? (
             <img
               src={articulo.imagen_url || ''}
@@ -115,7 +115,7 @@ export default function NewsCard({
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-[#3B80DF]/15 to-slate-200" />
+            <div className="w-full h-full bg-gradient-to-br from-[#001156]/15 to-slate-200" />
           )}
         </div>
 
@@ -128,9 +128,9 @@ export default function NewsCard({
         </div>
 
         <h3
-          className="text-black group-hover:text-[#0077cc] transition-colors duration-300 leading-snug"
+          className="text-black group-hover:text-[#001156] transition-colors duration-300 leading-snug"
           style={{
-            fontFamily: 'Lexend, sans-serif',
+            fontFamily: 'Roboto, sans-serif',
             fontWeight: 700,
             fontSize: 'clamp(1.1rem, 1.5vw, 1.4rem)',
             letterSpacing: '-0.02em',
@@ -142,7 +142,7 @@ export default function NewsCard({
         {articulo.meta_description && (
           <p
             className="mt-3 text-black/55 text-sm leading-relaxed line-clamp-2"
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           >
             {articulo.meta_description}
           </p>

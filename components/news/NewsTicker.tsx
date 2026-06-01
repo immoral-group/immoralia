@@ -12,7 +12,7 @@ export default function NewsTicker({ articulos }: { articulos: Articulo[] }) {
     <div className="border-y border-black/8 bg-white/60 backdrop-blur-sm">
       <div className="max-w-[1400px] mx-auto flex items-stretch">
         <div
-          className="shrink-0 flex items-center gap-2 px-5 py-3 bg-[#0077cc] text-white"
+          className="shrink-0 flex items-center gap-2 px-5 py-3 bg-[#001156] text-white"
           style={{
             fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
             fontSize: '11px',
@@ -44,8 +44,8 @@ export default function NewsTicker({ articulos }: { articulos: Articulo[] }) {
                 </span>
                 <span className="w-1 h-1 rounded-full bg-black/15" />
                 <span
-                  className="text-black/80 group-hover:text-[#0077cc] transition-colors text-sm"
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 400 }}
+                  className="text-black/80 group-hover:text-[#001156] transition-colors text-sm"
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
                 >
                   {a.titular}
                 </span>

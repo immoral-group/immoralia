@@ -65,14 +65,14 @@ export function WhatIsImmoraliaSection() {
           className="max-w-4xl"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 800 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 800 }}
             className="text-[36px] lg:text-[52px] mb-8 text-[#001156] leading-[1.1] tracking-tight"
           >
             Somos tu equipo de automatización <br/>
             <span className="text-[#00ffff]">(sin postureo)</span>
           </h2>
           <p 
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="text-gray-900 text-base lg:text-xl leading-relaxed max-w-3xl mb-12"
           >
             Immoralia es la división técnica de Immoral dedicada a documentar e implementar automatizaciones. Nos sentamos contigo, entendemos el proceso, lo convertimos en un flujo claro y lo dejamos funcionando.
@@ -89,7 +89,7 @@ export function WhatIsImmoraliaSection() {
                     <item.icon className="w-5 h-5 text-[#001156] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <span 
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 400 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
                     className="text-[#001156] text-base"
                   >
                     {item.text}

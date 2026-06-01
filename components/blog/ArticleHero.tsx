@@ -43,8 +43,8 @@ export default function ArticleHero({
         >
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-black/50 hover:text-[#0077cc] transition-colors duration-300 text-sm mb-10 no-underline group"
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            className="inline-flex items-center gap-2 text-black/50 hover:text-[#001156] transition-colors duration-300 text-sm mb-10 no-underline group"
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
             Volver al blog
@@ -59,8 +59,8 @@ export default function ArticleHero({
         >
           {categoria && (
             <span
-              className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#0077cc]/10 border border-[#0077cc]/30 text-[#0077cc] text-xs tracking-[0.18em] uppercase"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#001156]/10 border border-[#001156]/30 text-[#001156] text-xs tracking-[0.18em] uppercase"
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               {categoria}
             </span>
@@ -68,7 +68,7 @@ export default function ArticleHero({
           {fecha_publicacion && (
             <span
               className="text-black/40 text-sm"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               {formatDate(fecha_publicacion)}
             </span>
@@ -76,7 +76,7 @@ export default function ArticleHero({
           <span className="w-1 h-1 rounded-full bg-black/20" />
           <span
             className="text-black/40 text-sm"
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           >
             {readingMinutes} min de lectura
           </span>
@@ -87,7 +87,7 @@ export default function ArticleHero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl md:text-5xl lg:text-6xl text-black leading-[1.05] tracking-tight mb-10"
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, letterSpacing: '-0.025em' }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.025em' }}
         >
           {titular}
         </motion.h1>

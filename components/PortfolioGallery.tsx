@@ -48,13 +48,13 @@ export function PortfolioGallery() {
         >
           
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="text-4xl xl:text-5xl xl:max-w-3xl text-black mb-6 mx-auto"
           >
             Algunos de nuestros trabajos
           </h2>
           <p
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="text-gray-600 text-xl max-w-3xl mx-auto"
           >
             Anuncios 3D que han generado resultados reales para marcas de diferentes industrias
@@ -94,7 +94,7 @@ export function PortfolioGallery() {
 
                   {/* Category badge */}
                   <div className="absolute top-4 right-4 px-4 py-2 bg-black/50 backdrop-blur-xl border border-white/20 rounded-full z-10">
-                    <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }} className="text-white text-sm">
+                    <span style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }} className="text-white text-sm">
                       {item.category}
                     </span>
                   </div>

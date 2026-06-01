@@ -43,13 +43,13 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="mb-4 text-5xl"
           >
             Lo que dicen nuestros clientes
           </h2>
           <p
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="text-gray-600"
           >
             Resultados reales de marcas que ya están convirtiendo
@@ -67,12 +67,12 @@ export function Testimonials() {
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#3B80DF] text-[#3B80DF]" />
+                  <Star key={i} className="w-5 h-5 fill-[#001156] text-[#001156]" />
                 ))}
               </div>
               
               <p
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-gray-700 mb-6"
               >
                 "{testimonial.content}"
@@ -82,13 +82,13 @@ export function Testimonials() {
                 <div className="flex items-center justify-between">
                   <div>
                     <h4
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                       className="text-black"
                     >
                       {testimonial.name}
                     </h4>
                     <p
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                       className="text-gray-500 text-sm"
                     >
                       {testimonial.role}

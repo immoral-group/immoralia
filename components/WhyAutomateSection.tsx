@@ -71,9 +71,9 @@ export function WhyAutomateSection() {
                className="relative w-full h-full flex items-center justify-center"
              >
                 {/* Decorative floating particles/petals effect (subtle) */}
-                <div className="absolute top-20 left-10 w-2 h-2 bg-[#3B80DF] rounded-full opacity-40 blur-[1px]" />
-                <div className="absolute top-40 right-20 w-3 h-3 bg-[#3B80DF] rounded-full opacity-30 blur-[2px]" />
-                <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-[#3B80DF] rounded-full opacity-50" />
+                <div className="absolute top-20 left-10 w-2 h-2 bg-[#001156] rounded-full opacity-40 blur-[1px]" />
+                <div className="absolute top-40 right-20 w-3 h-3 bg-[#00FFFF] rounded-full opacity-50 blur-[2px]" />
+                <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-[#001156] rounded-full opacity-50" />
 
                 <motion.img 
                   src={aiChipImage} 
@@ -96,7 +96,7 @@ export function WhyAutomateSection() {
 
               {/* Title Block */}
               <h2
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                 className="text-5xl lg:text-7xl leading-[0.9] text-black mb-8 tracking-tighter"
               >
                 Si tu empresa
@@ -105,7 +105,7 @@ export function WhyAutomateSection() {
               </h2>
 
               <p
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-gray-500 text-lg lg:text-xl max-w-xl mb-16 leading-relaxed"
               >
                 Lo que te frena casi nunca es “marketing” o “ventas”. <br/>
@@ -128,13 +128,13 @@ export function WhyAutomateSection() {
                         <Icon className="w-8 h-8 text-[#001156]" strokeWidth={2} />
                       </div>
                       <h3 
-                        style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700 }}
-                        className="text-lg text-gray-900 mb-2 group-hover:text-[#3B80DF] transition-colors"
+                        style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 700 }}
+                        className="text-lg text-gray-900 mb-2 group-hover:text-[#001156] transition-colors"
                       >
                         {problem.title}
                       </h3>
                       <p 
-                        style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                        style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                         className="text-gray-500 text-sm leading-relaxed"
                       >
                         {problem.text}
@@ -146,7 +146,7 @@ export function WhyAutomateSection() {
 
               {/* Bottom Tagline */}
               <div className="mt-16 pt-8 border-t border-gray-200">
-                 <p style={{ fontFamily: 'Lexend, sans-serif' }} className="text-gray-900 font-medium">
+                 <p style={{ fontFamily: 'Roboto, sans-serif' }} className="text-gray-900 font-medium">
                     Eso no es “falta de ganas”. <span className="text-[#001156] font-bold">Es falta de sistema.</span>
                  </p>
               </div>

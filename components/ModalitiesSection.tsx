@@ -47,7 +47,7 @@ export function ModalitiesSection() {
           className="max-w-3xl"
         >
             <h2 
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
               className="text-4xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-10"
             >
               Elige tus procesos. <br/>
@@ -57,14 +57,14 @@ export function ModalitiesSection() {
 
             <div className="flex flex-col gap-6">
                 <p 
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                   className="text-gray-300 text-lg lg:text-xl leading-relaxed"
                 >
                   Tenemos un selector de procesos para que puedas solicitar lo que necesitas sin reuniones infinitas.
                 </p>
                 
                 <p 
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                   className="text-gray-300 text-lg lg:text-xl leading-relaxed"
                 >
                   Puedes elegir de una lista que vamos ampliando y personalizar cada proceso o podemos hacerlo juntos en una videollamada.
@@ -98,7 +98,7 @@ export function ModalitiesSection() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
             className="relative z-10 px-8 py-5 bg-white hover:bg-gray-100 text-[#001156] text-xl rounded-2xl transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.4)] flex items-center gap-3 transform hover:scale-105 inline-flex"
         >
             <MousePointerClick className="w-6 h-6" />

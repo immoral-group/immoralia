@@ -40,7 +40,7 @@ export function WhatIsSection() {
             className="pointer-events-none"
           >
             <h2
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, userSelect: 'none' }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, userSelect: 'none' }}
               className="xl: max-w-3xl text-4xl xl:text-6xl text-black mb-6 pointer-events-none"
             >
               Un nuevo enfoque para tus anuncios digitales
@@ -51,7 +51,7 @@ export function WhatIsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300, userSelect: 'none' }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300, userSelect: 'none' }}
             className="text-gray-600 text-base leading-relaxed xl:leading-5 pointer-events-none max-w-3xl mx-auto"
           >
             Creative Motion Ads es nuestro servicio de diseño y producción de anuncios con motion graphics en 3D, optimizados con IA.
@@ -62,7 +62,7 @@ export function WhatIsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300, userSelect: 'none' }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300, userSelect: 'none' }}
             className="text-gray-600 text-base leading-relaxed xl:leading-5 pointer-events-none max-w-3xl mx-auto"
           >
             

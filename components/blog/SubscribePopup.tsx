@@ -78,10 +78,10 @@ export default function SubscribePopup() {
           exit={{ y: '100%', opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
           className="fixed bottom-0 left-0 right-0 md:bottom-6 md:right-6 md:left-auto z-50 w-full md:max-w-sm bg-white border border-slate-200/60 rounded-t-3xl md:rounded-3xl p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.12)] md:shadow-2xl overflow-hidden"
-          style={{ fontFamily: 'Lexend, sans-serif' }}
+          style={{ fontFamily: 'Roboto, sans-serif' }}
         >
           {/* Background design accents */}
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#3B80DF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#001156]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#00ffff]/5 rounded-full blur-3xl pointer-events-none" />
 
           {/* Close Button */}
@@ -96,7 +96,7 @@ export default function SubscribePopup() {
           {/* Content */}
           <div className="relative z-20">
             <div className="flex items-center gap-3 mb-4">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#3B80DF]/10 border border-[#3B80DF]/20 text-[#3B80DF]">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#001156]/10 border border-[#001156]/20 text-[#001156]">
                 <Mail className="w-5 h-5" />
               </div>
               <div className="text-left">

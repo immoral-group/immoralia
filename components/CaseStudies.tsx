@@ -17,7 +17,7 @@ const cases = [
     description: 'Leadgen de alta conversión',
     metric: '+43% tasa de conversión',
     image: superPatchImage,
-    color: '#3B80DF',
+    color: '#001156',
     logo: superPatchLogo
   },
   {
@@ -33,7 +33,7 @@ const cases = [
     description: 'Plataforma de networking profesional optimizada',
     metric: '+65% engagement',
     image: teamderImage,
-    color: '#3B80DF',
+    color: '#001156',
     logo: teamderLogo
   }
 ];
@@ -53,13 +53,13 @@ export function CaseStudies() {
           className="mb-20 text-center"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="mb-4 text-5xl"
           >
             Casos de éxito
           </h2>
           <p
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="text-gray-400 max-w-2xl mx-auto"
           >
             Proyectos reales con resultados medibles
@@ -78,7 +78,7 @@ export function CaseStudies() {
               onMouseLeave={() => setHoveredIndex(null)}
               className="group relative"
             >
-              <div className="grid md:grid-cols-2 gap-0 bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-[#3B80DF]/50 transition-all duration-500">
+              <div className="grid md:grid-cols-2 gap-0 bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-[#00FFFF]/50 transition-all duration-500">
                 {/* Image side */}
                 <div className="relative h-80 md:h-96 overflow-hidden">
                   <motion.div
@@ -112,7 +112,7 @@ export function CaseStudies() {
                       />
                     ) : (
                       <h3
-                        style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                        style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                         className="mb-4 text-white text-4xl"
                       >
                         {caseItem.name}
@@ -120,7 +120,7 @@ export function CaseStudies() {
                     )}
 
                     <p
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                       className="text-gray-400 text-sx"
                     >
                       {caseItem.description}

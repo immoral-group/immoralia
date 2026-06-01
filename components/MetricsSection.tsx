@@ -65,12 +65,12 @@ export function MetricsSection() {
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                 className="flex flex-col items-center text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-[#3B80DF] rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-[#3B80DF]/50">
+                <div className="w-14 h-14 bg-[#001156] rounded-2xl flex items-center justify-center mb-4 shadow-lg shadow-[#00FFFF]/25">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 
                 <div
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                   className="mb-2 text-xl"
                 >
                   <Counter value={metric.value} />
@@ -78,7 +78,7 @@ export function MetricsSection() {
                 </div>
                 
                 <p
-                  style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                   className="text-gray-400 text-lg"
                 >
                   {metric.label}

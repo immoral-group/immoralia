@@ -12,7 +12,7 @@ export default function BlogBackgroundAurora() {
           className="absolute inset-0 opacity-20"
           style={{
             background:
-              'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(59,128,223,0.25) 0%, rgba(0,17,86,0.10) 35%, transparent 70%)',
+              'radial-gradient(ellipse 60% 60% at 50% 0%, rgba(0,255,255,0.20) 0%, rgba(0,17,86,0.10) 35%, transparent 70%)',
             filter: 'blur(40px)',
           }}
         />
@@ -33,7 +33,7 @@ export default function BlogBackgroundAurora() {
       />
 
       {/* Hairline accent below nav */}
-      <div className="fixed top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3B80DF]/30 to-transparent pointer-events-none" />
+      <div className="fixed top-[68px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#001156]/30 to-transparent pointer-events-none" />
 
       {/* Bottom soft fade so reading area doesn't feel infinite */}
       <div className="fixed bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#f8f8f6] to-transparent pointer-events-none" />

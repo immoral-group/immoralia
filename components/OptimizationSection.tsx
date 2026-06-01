@@ -51,13 +51,13 @@ export function OptimizationSection() {
                 </div>
                 <div>
                   <div
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                     className="text-white"
                   >
                     2x
                   </div>
                   <p
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                     className="text-sm text-white"
                   >
                     Conversión duplicada
@@ -79,16 +79,16 @@ export function OptimizationSection() {
                 initial={{ width: 0 }}
                 animate={isInView ? { width: 80 } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="h-1 bg-[#3B80DF] mb-6 rounded-full"
+                className="h-1 bg-[#001156] mb-6 rounded-full"
               />
               <h2
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                 className="mb-6 text-4xl"
               >
                 Landing Pages creadas para VENDER, no solo para verse bien.
               </h2>
               <p
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                 className="text-gray-700 mb-8"
               >
                 El éxito de una campaña no depende solo del anuncio. La página de destino es clave para transformar clics en ventas, leads o reservas. Cada elemento está diseñado estratégicamente para guiar al usuario hacia la conversión.
@@ -105,11 +105,11 @@ export function OptimizationSection() {
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   className="flex items-start gap-3 group"
                 >
-                  <div className="w-6 h-6 bg-[#3B80DF]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#3B80DF] transition-colors">
-                    <CheckCircle2 className="w-4 h-4 text-[#3B80DF] group-hover:text-white transition-colors" />
+                  <div className="w-6 h-6 bg-[#001156]/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#001156] transition-colors">
+                    <CheckCircle2 className="w-4 h-4 text-[#001156] group-hover:text-white transition-colors" />
                   </div>
                   <p
-                    style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                     className="text-gray-700"
                   >
                     {feature}

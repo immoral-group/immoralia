@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Lexend } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './blog-globals.css';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import Script from 'next/script';
@@ -13,7 +13,7 @@ import { blogConfig } from '@/lib/blog-config';
 import BlogBackground from '@/components/blog/backgrounds/BlogBackgroundAurora';
 import SubscribePopup from '@/components/blog/SubscribePopup';
 
-const lexend = Lexend({
+const roboto = Roboto({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
 });
@@ -33,7 +33,7 @@ export default async function BlogLayout({
 
   return (
     <BlogConfigProvider config={blogConfig}>
-      <div className={`blog-shell ${lexend.className}`}>
+      <div className={`blog-shell ${roboto.className}`}>
         <BlogBackground />
         <BlogNavbar />
         <div className="relative z-10">{children}</div>

@@ -52,8 +52,8 @@ export function ServiceIncludesSection() {
     <section id="servicios" ref={ref} className="w-full py-12 xl:py-32 px-8 bg-black relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#3B80DF] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#3B80DF] rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#001156] rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00FFFF] rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -64,7 +64,7 @@ export function ServiceIncludesSection() {
           className="text-center mb-20"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="text-4xl xl:text-5xl xl:max-w-3xl text-white mb-8 mx-auto"
           >
             Desde la idea hasta el anuncio listo para lanzar
@@ -90,7 +90,7 @@ export function ServiceIncludesSection() {
                   transition-all duration-300 hover:-translate-y-2
                   flex flex-col justify-between
                   ${hoveredIndex === index 
-                    ? 'border-[#3B80DF] bg-white/10 shadow-2xl shadow-[#3B80DF]/30' 
+                    ? 'border-[#00FFFF] bg-white/10 shadow-2xl shadow-[#00FFFF]/10' 
                     : 'border-white/10 hover:border-white/20'
                   }
                 `}>
@@ -99,7 +99,7 @@ export function ServiceIncludesSection() {
                       w-16 h-16 rounded-2xl flex items-center justify-center
                       transition-all duration-300
                       ${hoveredIndex === index 
-                        ? 'bg-[#3B80DF] shadow-lg shadow-[#3B80DF]/50 scale-110' 
+                        ? 'bg-[#001156] shadow-lg shadow-[#00FFFF]/30 scale-110' 
                         : 'bg-white/10 border border-white/20'
                       }
                     `}>
@@ -107,10 +107,10 @@ export function ServiceIncludesSection() {
                     </div>
                     
                     <span
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                       className={`
                         text-5xl transition-colors duration-300
-                        ${hoveredIndex === index ? 'text-[#3B80DF]' : 'text-white/20'}
+                        ${hoveredIndex === index ? 'text-[#00FFFF]' : 'text-white/20'}
                       `}
                     >
                       {step.number}
@@ -119,16 +119,16 @@ export function ServiceIncludesSection() {
                   
                   <div>
                     <h3
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                       className={`
                         text-2xl mb-3 transition-colors duration-300
-                        ${hoveredIndex === index ? 'text-[#3B80DF]' : 'text-white'}
+                        ${hoveredIndex === index ? 'text-[#00FFFF]' : 'text-white'}
                       `}
                     >
                       {step.title}
                     </h3>
                     <p
-                      style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
                       className="text-gray-400 text-base leading-relaxed"
                     >
                       {step.description}
@@ -149,7 +149,7 @@ export function ServiceIncludesSection() {
         >
           <div className="p-10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl">
             <p
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               className="text-gray-200 text-base xl:text-xl leading-relaxed text-center"
             >
               Creamos anuncios pensados para productos, servicios, lanzamientos y catálogos, tanto en e-commerce como en campañas de marca. Nuestros motion ads están diseñados para captar atención y mejorar la conversión.

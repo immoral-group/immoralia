@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Lexend } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import '../(blog)/blog-globals.css';
 import BlogNavbar from '@/components/blog/BlogNavbar';
 import BlogBackground from '@/components/blog/backgrounds/BlogBackgroundEditorial';
 import VerticalPylon from '@/components/news/VerticalPylon';
 
-const lexend = Lexend({
+const roboto = Roboto({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
 });
@@ -22,7 +22,7 @@ export default function NewsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`blog-shell ${lexend.className}`}>
+    <div className={`blog-shell ${roboto.className}`}>
       <BlogBackground />
       <BlogNavbar />
       <VerticalPylon />

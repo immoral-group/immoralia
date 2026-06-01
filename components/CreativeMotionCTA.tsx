@@ -37,7 +37,7 @@ export function CreativeMotionCTA() {
           className="mb-12"
         >
           <h2
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="text-[30px] lg:text-[50px] text-white mb-8 leading-tight"
           >
             Si quieres orden operativo, <br/>
@@ -49,7 +49,7 @@ export function CreativeMotionCTA() {
               href="https://procesos.immoralia.es/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
               className="group px-8 py-4 bg-[#00ffff] hover:bg-[#03e0da] text-black text-lg rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(59,128,223,0.3)] hover:shadow-[0_0_40px_rgba(59,128,223,0.5)] flex items-center gap-3"
             >
               Ir al selector de procesos

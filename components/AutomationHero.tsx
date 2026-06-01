@@ -82,7 +82,7 @@ export function AutomationHero() {
 
           <h1
             style={{
-              fontFamily: "Lexend, sans-serif",
+              fontFamily: "Roboto, sans-serif",
               fontWeight: 900,
             }}
             className="text-white text-4xl lg:text-6xl leading-[1.1] tracking-tight"
@@ -98,7 +98,7 @@ export function AutomationHero() {
 
         {/* Subtle Background Glow - Adjusted opacity for new background */}
         <div className="absolute inset-0 pointer-events-none opacity-40 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#3B80DF] rounded-full blur-[150px] opacity-30" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00FFFF] rounded-full blur-[150px] opacity-30" />
         </div>
       </section>
 
@@ -133,7 +133,7 @@ export function AutomationHero() {
           >
             <p
               style={{
-                fontFamily: "Lexend, sans-serif",
+                fontFamily: "Roboto, sans-serif",
                 fontWeight: 300,
               }}
               className="text-[#001156] text-xl lg:text-2xl leading-relaxed"
@@ -149,7 +149,7 @@ export function AutomationHero() {
               {bullets.map((bullet, index) => (
                 <div
                   key={index}
-                  className="px-5 py-3 rounded-full border border-[#001156]/40 backdrop-blur-sm text-[#001156] text-sm font-light hover:border-[#3B80DF]/50 transition-colors cursor-default bg-white/5 pointer-events-auto"
+                  className="px-5 py-3 rounded-full border border-[#001156]/40 backdrop-blur-sm text-[#001156] text-sm font-light hover:border-[#001156]/50 transition-colors cursor-default bg-white/5 pointer-events-auto"
                 >
                   {bullet}
                 </div>
@@ -169,9 +169,9 @@ export function AutomationHero() {
 
               <button
                 onClick={scrollToMethod}
-                className="flex items-center gap-3 text-[#001156] hover:text-[#3B80DF] transition-colors group text-sm font-medium pointer-events-auto"
+                className="flex items-center gap-3 text-[#001156] hover:text-[#001156] transition-colors group text-sm font-medium pointer-events-auto"
               >
-                <div className="w-10 h-10 rounded-full border border-[#001156]/20 flex items-center justify-center group-hover:border-[#3B80DF] transition-colors">
+                <div className="w-10 h-10 rounded-full border border-[#001156]/20 flex items-center justify-center group-hover:border-[#001156] transition-colors">
                   <PlayCircle className="w-4 h-4" />
                 </div>
                 Ver cómo trabajamos

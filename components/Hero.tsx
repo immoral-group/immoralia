@@ -26,9 +26,9 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full shadow-lg"
           >
-            <Sparkles className="w-4 h-4 text-[#3B80DF]" />
+            <Sparkles className="w-4 h-4 text-[#00FFFF]" />
             <span
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
               className="text-sm text-white"
             >
               Landing Pages de Alto Impacto
@@ -39,7 +39,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             className="max-w-5xl mx-auto bg-gradient-to-br from-white via-white to-gray-300 bg-clip-text text-transparent drop-shadow-2xl pb-24 xl:pb-64 text-3xl xl:text-6xl"
           >
             Tus anuncios merecen una landing que venda
@@ -49,7 +49,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             className="max-w-2xl mx-auto text-gray-300 drop-shadow-lg text-2xl"
           >
             Diseñamos y publicamos páginas 100% enfocadas en conversión para que cada clic cuente.
@@ -62,8 +62,8 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <button
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
-              className="group px-10 py-4 bg-[#3B80DF] text-white rounded-[10px] hover:bg-[#2d6bc7] transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center"
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
+              className="group px-10 py-4 bg-[#001156] hover:bg-[#030834] text-white border border-[#00FFFF]/50 shadow-[0_0_20px_rgba(0,255,255,0.25)] rounded-[10px] transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center"
               onClick={() => {
                 document.getElementById('plan-precio')?.scrollIntoView({ 
                   behavior: 'smooth',
@@ -76,7 +76,7 @@ export function Hero() {
             </button>
             
             <button
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
               className="px-10 py-4 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-[10px] hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105"
               onClick={() => {
                 document.getElementById('casos-de-exito')?.scrollIntoView({ 

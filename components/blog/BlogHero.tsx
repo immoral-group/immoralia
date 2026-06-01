@@ -12,7 +12,7 @@ export default function BlogHero({ count }: { count: number }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-8"
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 100 }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
         >
           <span className="text-black/90">{blogConfig.hero.title}</span>
           <br />
@@ -24,7 +24,7 @@ export default function BlogHero({ count }: { count: number }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto leading-relaxed"
-          style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
         >
           {blogConfig.hero.subtitle}
         </motion.p>
@@ -38,18 +38,18 @@ export default function BlogHero({ count }: { count: number }) {
           <div className="flex items-center gap-2">
             <span
               className="text-3xl text-black"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
             >
               {count}
             </span>
-            <span className="text-black/50" style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>
+            <span className="text-black/50" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}>
               {count === 1 ? 'artículo publicado' : 'artículos publicados'}
             </span>
           </div>
           <div className="w-px h-6 bg-black/20" />
           <div className="flex items-center gap-2 text-black/50">
-            <span className="w-2 h-2 rounded-full bg-[#0077cc] animate-pulse" />
-            <span style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}>{blogConfig.hero.frequency}</span>
+            <span className="w-2 h-2 rounded-full bg-[#001156] animate-pulse" />
+            <span style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}>{blogConfig.hero.frequency}</span>
           </div>
         </motion.div>
       </div>

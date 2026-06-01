@@ -111,7 +111,7 @@ export function HowWeWorkSection() {
              initial={{ opacity: 0, y: 20 }}
              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
              transition={{ duration: 0.6 }}
-             style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+             style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
              className="text-4xl lg:text-6xl text-white mb-6 leading-tight"
            >
              Cómo lo hacemos
@@ -196,7 +196,7 @@ export function HowWeWorkSection() {
                        <div className="flex items-center gap-3 mb-3">
                           <PhaseIcon className="w-5 h-5 text-gray-400 group-hover:text-[#00ffff] transition-colors" />
                           <h3 
-                            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900 }}
+                            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
                             className="text-white text-2xl"
                           >
                             {phase.title}

@@ -32,7 +32,7 @@ export default async function NewsPage() {
           <div className="max-w-3xl mx-auto text-center py-24">
             <p
               className="text-black/45 max-w-md mx-auto"
-              style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               Estamos preparando la primera tirada del noticiero.
             </p>
@@ -63,7 +63,7 @@ export default async function NewsPage() {
       <section className="border-b border-black/8">
         <div className="max-w-[1400px] mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-8">
-            <SectionLabel label="Análisis · Producto" accent="#3B80DF" />
+            <SectionLabel label="Análisis · Producto" accent="#001156" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {big.map((a) => (
                 <NewsCard key={a.id} articulo={a} variant="tall" />
@@ -75,7 +75,7 @@ export default async function NewsPage() {
                 <SectionLabel
                   label="Más historias"
                   count={grid.length}
-                  accent="#0077cc"
+                  accent="#001156"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                   {grid.map((a) => (
@@ -91,11 +91,11 @@ export default async function NewsPage() {
 
             {/* Newsletter mini-CTA */}
             <aside
-              className="border border-[#0077cc]/20 p-6 rounded-lg bg-blue-50/50"
+              className="border border-[#001156]/20 p-6 rounded-lg bg-[#001156]/5"
               style={{  }}
             >
               <div
-                className="uppercase text-[#0077cc] mb-3"
+                className="uppercase text-[#001156] mb-3"
                 style={{
                   fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
                   fontSize: '11px',
@@ -108,7 +108,7 @@ export default async function NewsPage() {
               <h3
                 className="text-black mb-3 leading-snug"
                 style={{
-                  fontFamily: 'Lexend, sans-serif',
+                  fontFamily: 'Roboto, sans-serif',
                   fontWeight: 900,
                   fontSize: '1.5rem',
                   letterSpacing: '-0.02em',
@@ -118,17 +118,17 @@ export default async function NewsPage() {
               </h3>
               <p
                 className="text-black/55 text-sm mb-5 leading-relaxed"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
               >
                 Sin ruido. Sin hype. Cancela cuando quieras.
               </p>
               <a
                 href="#suscribirse"
-                className="inline-flex items-center gap-2 text-[#0077cc] text-sm group no-underline"
-                style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 500 }}
+                className="inline-flex items-center gap-2 text-[#001156] text-sm group no-underline"
+                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 500 }}
               >
                 Suscribirme
-                <span className="block w-6 h-px bg-[#0077cc] group-hover:w-12 transition-all duration-500" />
+                <span className="block w-6 h-px bg-[#001156] group-hover:w-12 transition-all duration-500" />
               </a>
             </aside>
           </div>
@@ -183,7 +183,7 @@ function Masthead({ totalCount }: { totalCount: number }) {
           <h1
             className="text-black tracking-tight"
             style={{
-              fontFamily: 'Lexend, sans-serif',
+              fontFamily: 'Roboto, sans-serif',
               fontWeight: 900,
               fontSize: 'clamp(3rem, 7vw, 6.5rem)',
               lineHeight: 0.85,
@@ -191,11 +191,11 @@ function Masthead({ totalCount }: { totalCount: number }) {
             }}
           >
             <span>immoralia </span>
-            <span style={{ color: '#0077cc' }}>News</span>
+            <span style={{ color: '#001156' }}>News</span>
           </h1>
           <p
             className="mt-4 text-black/55 max-w-xl text-base md:text-lg leading-relaxed"
-            style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 300 }}
+            style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
           >
             IA aplicada a procesos de empresa. Sin ruido. Sin hype. Solo lo que
             cambia algo en tu equipo esta semana.
@@ -214,7 +214,7 @@ function Masthead({ totalCount }: { totalCount: number }) {
             Por Brian · Editorial Immoralia
           </div>
           <div className="flex items-center gap-2 text-black/35">
-            <span className="w-1.5 h-1.5 bg-[#0077cc] inline-block animate-pulse" />
+            <span className="w-1.5 h-1.5 bg-[#001156] inline-block animate-pulse" />
             <span
               className="uppercase"
               style={{
@@ -239,14 +239,14 @@ function EmptyMasthead() {
         <h1
           className="text-black"
           style={{
-            fontFamily: 'Lexend, sans-serif',
+            fontFamily: 'Roboto, sans-serif',
             fontWeight: 900,
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             lineHeight: 0.9,
             letterSpacing: '-0.04em',
           }}
         >
-          immoralia News <span style={{ color: '#0077cc' }}>·</span> Próximamente
+          immoralia News <span style={{ color: '#001156' }}>·</span> Próximamente
         </h1>
       </div>
     </div>
