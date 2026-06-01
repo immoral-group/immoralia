@@ -6,50 +6,46 @@ import { blogConfig } from '@/lib/blog-config';
 export default function BlogHero({ count }: { count: number }) {
   return (
     <section className="relative pt-40 pb-16 px-6">
-      <div className="max-w-5xl mx-auto text-center">
-        <motion.h1
+      <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-8"
-          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
+          className="inline-block border border-[#00FFFF] px-10 py-6 max-w-[610px] w-full mx-auto mb-8"
         >
-          <span className="text-black/90">{blogConfig.hero.title}</span>
-          <br />
-          <span className="gradient-text font-black">{blogConfig.hero.titleAlt}</span>
-        </motion.h1>
+          <h1
+            className="text-4xl md:text-[60px] tracking-tight leading-[1.1] text-center text-[#001156]"
+            style={{ fontFamily: 'Roboto, sans-serif' }}
+          >
+            <span className="font-bold">{blogConfig.hero.title}</span>
+            <br />
+            <span className="font-black">{blogConfig.hero.titleAlt}</span>
+          </h1>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto leading-relaxed"
-          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+          className="text-lg md:text-xl text-[#001156]/80 max-w-2xl mx-auto leading-relaxed whitespace-pre-line"
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
         >
           {blogConfig.hero.subtitle}
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 flex items-center justify-center gap-6 text-sm"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10 flex justify-center text-sm"
         >
-          <div className="flex items-center gap-2">
-            <span
-              className="text-3xl text-black"
-              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900 }}
-            >
-              {count}
-            </span>
-            <span className="text-black/50" style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}>
-              {count === 1 ? 'artículo publicado' : 'artículos publicados'}
-            </span>
-          </div>
-          <div className="w-px h-6 bg-black/20" />
-          <div className="flex items-center gap-2 text-black/50">
-            <span className="w-2 h-2 rounded-full bg-[#001156] animate-pulse" />
-            <span style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}>{blogConfig.hero.frequency}</span>
+          <div
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00FFFF] text-black font-bold tracking-wide shadow-sm"
+            style={{ fontFamily: 'Roboto, sans-serif' }}
+          >
+            <span>{count} {count === 1 ? 'Artículo publicado' : 'Artículos publicados'}</span>
+            <span className="opacity-60">•</span>
+            <span>{blogConfig.hero.frequency}</span>
           </div>
         </motion.div>
       </div>

@@ -19,7 +19,7 @@ export const blogConfig: BlogConfig = {
   hero: {
     title:     'Lo que importa,',
     titleAlt:  'cada día',
-    subtitle:  'Inteligencia artificial aplicada a procesos de empresa. Sin ruido. Sin hype. Solo lo que cambia algo en tu equipo esta semana.',
+    subtitle:  'Inteligencia artificial aplicada a procesos de empresa. Sin ruido.\nSin hype.Solo lo que cambia algo en tu equipo esta semana.',
     frequency: 'Lunes a viernes',
   },
 

@@ -48,10 +48,10 @@ export default function BlogNavbar() {
                 href="/blog"
                 className={`px-4 py-1.5 rounded-full text-xs tracking-[0.18em] uppercase transition-all duration-300 no-underline ${
                   !isNews
-                    ? 'bg-[#00ffff]/15 text-[#00ffff] shadow-[0_0_20px_rgba(0,255,255,0.15)]'
+                    ? 'bg-[#00FFFF] text-black font-bold shadow-[0_0_20px_rgba(0,255,255,0.25)]'
                     : 'text-white/55 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif' }}
               >
                 Blog
               </Link>
@@ -59,10 +59,10 @@ export default function BlogNavbar() {
                 href="/news"
                 className={`px-4 py-1.5 rounded-full text-xs tracking-[0.18em] uppercase transition-all duration-300 no-underline ${
                   isNews
-                    ? 'bg-[#00ffff]/15 text-[#00ffff] shadow-[0_0_20px_rgba(0,255,255,0.15)]'
+                    ? 'bg-[#00FFFF] text-black font-bold shadow-[0_0_20px_rgba(0,255,255,0.25)]'
                     : 'text-white/55 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+                style={{ fontFamily: 'Roboto, sans-serif' }}
               >
                 News
               </Link>

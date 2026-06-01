@@ -37,13 +37,13 @@ export default function FeaturedArticle({ articulo }: { articulo: FeaturedArticl
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-6">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#001156]" />
+          <div className="flex items-center gap-2 text-black/45">
+            <span className="text-sm font-semibold">✦</span>
             <span
-              className="text-xs tracking-[0.25em] text-black/45 uppercase"
-              style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+              className="text-xs tracking-[0.25em] uppercase font-bold"
+              style={{ fontFamily: 'Roboto, sans-serif' }}
             >
-              Lo último
+              LO ÚLTIMO
             </span>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function FeaturedArticle({ articulo }: { articulo: FeaturedArticl
 
                 <h2
                   className="text-3xl md:text-4xl lg:text-5xl text-black leading-[1.05] tracking-tight mb-6 group-hover:text-[#001156] transition-colors duration-500"
-                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 900, letterSpacing: '-0.025em' }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 700, letterSpacing: '-0.025em' }}
                 >
                   {articulo.titular}
                 </h2>
