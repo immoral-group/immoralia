@@ -172,17 +172,17 @@ export default function BlogList({ articulos }: { articulos: Articulo[] }) {
   // Calcular el número total de páginas
   const totalPages = useMemo(() => {
     if (isFilteringOrSearching) {
-      return Math.ceil(filteredAndSorted.length / 9) || 1;
+      return Math.ceil(filteredAndSorted.length / 8) || 1;
     } else {
-      return Math.ceil(rest.length / 9) || 1;
+      return Math.ceil(rest.length / 8) || 1;
     }
   }, [isFilteringOrSearching, filteredAndSorted.length, rest.length]);
 
   // Obtener los artículos para la página actual
   const currentArchiveArticles = useMemo(() => {
     const sourceList = isFilteringOrSearching ? filteredAndSorted : rest;
-    const start = (currentPage - 1) * 9;
-    return sourceList.slice(start, start + 9);
+    const start = (currentPage - 1) * 8;
+    return sourceList.slice(start, start + 8);
   }, [isFilteringOrSearching, currentPage, filteredAndSorted, rest]);
 
   const clearAllFilters = () => {
