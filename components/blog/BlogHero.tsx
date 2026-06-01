@@ -6,22 +6,18 @@ import { blogConfig } from '@/lib/blog-config';
 export default function BlogHero({ count }: { count: number }) {
   return (
     <section className="relative pt-40 pb-16 px-6">
-      <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
-        <motion.div
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-block border border-[#00FFFF] px-10 py-6 max-w-[610px] w-full mx-auto mb-8"
+          className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-8"
+          style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}
         >
-          <h1
-            className="text-4xl md:text-[60px] tracking-tight leading-[1.1] text-center text-[#001156]"
-            style={{ fontFamily: 'Roboto, sans-serif' }}
-          >
-            <span className="font-bold">{blogConfig.hero.title}</span>
-            <br />
-            <span className="font-black">{blogConfig.hero.titleAlt}</span>
-          </h1>
-        </motion.div>
+          <span className="text-black/90">{blogConfig.hero.title}</span>
+          <br />
+          <span className="gradient-text font-black">{blogConfig.hero.titleAlt}</span>
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
