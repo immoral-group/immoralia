@@ -5,97 +5,121 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, Mail } from 'lucide-react';
 import SubscribeForm from '@/components/SubscribeForm';
 
+const getCookie = (name: string) => {
+  if (typeof document === 'undefined') return false;
+  return document.cookie.split(';').some((item) => item.trim().startsWith(`${name}=`));
+};
+
 export default function SubscribePopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [timeElapsed, setTimeElapsed] = useState(false);
+  const [scrollPassed, setScrollPassed] = useState(false);
 
+  // Monitorizar el tiempo mínimo de estancia (8 segundos)
   useEffect(() => {
-    // Solo ejecutar del lado del cliente
-    const isSubscribed = document.cookie
-      .split(';')
-      .some((item) => item.trim().startsWith('newsletter_subscribed='));
-    const isDismissed = sessionStorage.getItem('newsletter_popup_dismissed') === 'true';
+    const timer = setTimeout(() => {
+      setTimeElapsed(true);
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Monitorizar la profundidad de scroll mínima (300px)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 300) {
+        setScrollPassed(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Activar el disparador al cumplirse las condiciones
+  useEffect(() => {
+    const isSubscribed = getCookie('newsletter_subscribed');
+    const isDismissed = getCookie('newsletter_slidein_dismissed');
 
     if (isSubscribed || isDismissed) {
       return;
     }
 
-    const handleMouseLeave = (e: MouseEvent) => {
-      // clientY < 20 detecta si el puntero se sale de la parte superior del viewport
-      if (e.clientY < 20) {
-        setIsOpen(true);
-      }
-    };
+    if (timeElapsed && scrollPassed) {
+      const isMobile = window.innerWidth < 768;
 
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, []);
+      if (isMobile) {
+        // En móviles, se abre automáticamente tras cumplir scroll y tiempo
+        setIsOpen(true);
+      } else {
+        // En desktop, se abre al detectar intención de salida
+        const handleMouseLeave = (e: MouseEvent) => {
+          if (e.clientY < 20) {
+            setIsOpen(true);
+          }
+        };
+        document.addEventListener('mouseleave', handleMouseLeave);
+        return () => document.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    }
+  }, [timeElapsed, scrollPassed]);
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem('newsletter_popup_dismissed', 'true');
+    // Establecer cookie para evitar mostrarlo de nuevo por 5 días (5 * 24 * 60 * 60 segundos)
+    const maxAge = 5 * 24 * 60 * 60;
+    document.cookie = `newsletter_slidein_dismissed=true; path=/; max-age=${maxAge}; SameSite=Lax`;
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+        <motion.div
+          initial={{ y: '100%', opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: '100%', opacity: 0 }}
+          transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+          className="fixed bottom-0 left-0 right-0 md:bottom-6 md:right-6 md:left-auto z-50 w-full md:max-w-sm bg-white border border-slate-200/60 rounded-t-3xl md:rounded-3xl p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.12)] md:shadow-2xl overflow-hidden"
+          style={{ fontFamily: 'Lexend, sans-serif' }}
+        >
+          {/* Background design accents */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#3B80DF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#00ffff]/5 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Close Button */}
+          <button
             onClick={handleClose}
-            className="absolute inset-0 bg-black/60 backdrop-blur-md"
-          />
-
-          {/* Modal Content */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', duration: 0.5 }}
-            className="relative w-full max-w-md bg-white border border-slate-200/60 rounded-3xl p-8 md:p-10 shadow-2xl overflow-hidden z-10"
-            style={{ fontFamily: 'Lexend, sans-serif' }}
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors z-30"
+            aria-label="Cerrar"
           >
-            {/* Background design accents */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#3B80DF]/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#00ffff]/10 rounded-full blur-3xl pointer-events-none" />
+            <X className="w-4 h-4" />
+          </button>
 
-            {/* Close Button */}
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors"
-              aria-label="Cerrar"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Header */}
-            <div className="flex flex-col items-center mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#3B80DF]/10 border border-[#3B80DF]/20 text-[#3B80DF] mb-4">
-                <Mail className="w-6 h-6" />
+          {/* Content */}
+          <div className="relative z-20">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#3B80DF]/10 border border-[#3B80DF]/20 text-[#3B80DF]">
+                <Mail className="w-5 h-5" />
               </div>
-              <h3 className="text-2xl md:text-3xl text-black font-black tracking-tight text-center leading-tight">
-                ¿Te vas tan pronto?
-              </h3>
-              <p className="text-slate-500 text-sm text-center mt-2 max-w-sm font-light">
-                No te pierdas nuestra newsletter diaria. Sin hype, sin ruido. Solo la información de IA que cambia tus procesos.
-              </p>
+              <div className="text-left">
+                <h3 className="text-lg text-black font-black tracking-tight leading-tight">
+                  ¿Te interesa la IA de verdad?
+                </h3>
+                <p className="text-slate-500 text-xs mt-0.5 font-light">
+                  Únete gratis y recibe una noticia al día.
+                </p>
+              </div>
             </div>
 
             {/* Subscribe Form */}
-            <div className="relative z-20">
+            <div className="mt-4">
               <SubscribeForm />
             </div>
 
             {/* Footer note */}
-            <p className="text-[11px] text-slate-400 text-center mt-4 font-light">
-              Únete gratis. Cancela con un clic cuando quieras.
+            <p className="text-[10px] text-slate-400 text-center mt-3 font-light">
+              Sin spam. Cancela en un clic cuando quieras.
             </p>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
