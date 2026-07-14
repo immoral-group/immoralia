@@ -46,7 +46,7 @@ export function CreativeMotionCTA() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pointer-events-auto">
             <a
-              href="https://procesos.immoralia.es/"
+              href="https://immoralia.es/procesos"
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 100 }}

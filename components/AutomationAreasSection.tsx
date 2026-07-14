@@ -197,7 +197,7 @@ export function AutomationAreasSection() {
                       <span className="text-[#00ffff]">100%</span> Automatizado
                     </div>
                     <a
-                      href="https://procesos.immoralia.es/"
+                      href="https://immoralia.es/procesos"
                       target="_blank"
                       rel="noopener noreferrer" 
                       className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-white text-sm font-medium transition-all flex items-center gap-2 group-hover:gap-3"
