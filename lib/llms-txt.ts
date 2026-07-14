@@ -55,5 +55,6 @@ ${articulosList}
 
 - Blog: ${baseUrl}/blog
 - Noticiero: ${baseUrl}/news
+- Feed RSS: ${baseUrl}/feed.xml
 `
 }
