@@ -1,0 +1,27 @@
+# Configuración de la skill immoral-seo-analisis-gsc para immoralia.es/blog
+# Proyecto: immoral-group/immoralia (vertical blog/landing)
+#
+# immoralia.es es un dominio compartido: el Catálogo de Procesos vive en
+# /procesos (config propia con path_prefix: /procesos) y este vertical sirve
+# /, /blog y /news. path_prefix filtra por "contiene este fragmento", no
+# admite exclusión ni múltiples valores -- por eso se usa /blog (aísla
+# limpiamente el contenido editorial, que es donde vive el volumen real de
+# tráfico). La home (/) no se puede aislar del Catálogo con este mecanismo;
+# ver la nota en la página ClickUp de informes de este vertical.
+
+site: https://immoralia.es/
+path_prefix: /blog
+
+report_destinations:
+  - clickup_subpage
+
+clickup:
+  parent_page_id: knvz4-242055
+  workspace_id: "20639716"
+  page_title_prefix: "Informe SEO"
+
+thresholds:
+  position_drop_alert: 5
+  ctr_low_alert: 0.005
+  min_impressions_opportunity: 50
+  min_impressions_alert: 100
