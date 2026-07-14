@@ -102,21 +102,69 @@ export async function generateMetadata({
   }
 }
 
+function ArticuloJsonLd({
+  articulo,
+  siteTitle,
+  canonical,
+}: {
+  articulo: NonNullable<Awaited<ReturnType<typeof getArticulo>>>;
+  siteTitle: string;
+  canonical: string;
+}) {
+  const ogImage = articulo.og_image_url || articulo.imagen_url || null;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: articulo.seo_title || articulo.titular,
+    description: articulo.meta_description || undefined,
+    image: ogImage ? [ogImage] : undefined,
+    datePublished: articulo.fecha_publicacion || undefined,
+    dateModified: articulo.fecha_publicacion || undefined,
+    author: {
+      '@type': 'Organization',
+      name: siteTitle,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteTitle,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonical,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export default async function ArticuloPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const articulo = await getArticulo(slug);
+  const [articulo, vertical] = await Promise.all([
+    getArticulo(slug),
+    getVerticalConfig(),
+  ]);
 
   if (!articulo) notFound();
 
   const relacionados = await getRelacionados(articulo.id);
   const minutos = readingMinutesFromHtml(articulo.cuerpo);
+  const siteTitle = vertical?.seo_site_title || 'Immoralia';
+  const canonical = articulo.canonical_url
+    || `${process.env.NEXT_PUBLIC_APP_URL}/blog/${articulo.slug}`;
 
   return (
     <main className="relative">
+      <ArticuloJsonLd articulo={articulo} siteTitle={siteTitle} canonical={canonical} />
       <ReadingProgress />
 
       <ArticleHero
