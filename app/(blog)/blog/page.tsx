@@ -4,8 +4,30 @@ import BlogList from '@/components/blog/BlogList';
 import SubscribeCTA from '@/components/blog/SubscribeCTA';
 import { Footer } from '@/components/Footer';
 import { blogConfig } from '@/lib/blog-config';
+import type { Metadata } from 'next';
 
 export const revalidate = 3600;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl     = process.env.NEXT_PUBLIC_APP_URL || '';
+  const title        = `Blog | ${blogConfig.siteName}`;
+  const description  = blogConfig.hero.subtitle;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${baseUrl}/blog`,
+    },
+    openGraph: {
+      title,
+      description,
+      url:      `${baseUrl}/blog`,
+      siteName: blogConfig.siteName,
+      type:     'website',
+    },
+  };
+}
 
 async function getArticulos() {
   const { data } = await supabase
