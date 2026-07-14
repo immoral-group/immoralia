@@ -11,7 +11,7 @@ export const blogConfig: BlogConfig = {
     },
     cta: {
       text: 'Selector de procesos',
-      href: 'https://procesos.immoralia.es/',
+      href: 'https://immoralia.es/procesos',
     },
     showBlogNewsToggle: true,
   },

@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { getLlmsTxtContent } from '@/lib/llms-txt'
 
-// Alias de compatibilidad. La ruta canónica es /llms.txt.
+// force-dynamic: ruta nueva; verificado en imcontent.es que con solo
+// `revalidate` el build inicial la deja devolviendo 404 cacheado.
 export const dynamic = 'force-dynamic'
 export const revalidate = 3600
 
