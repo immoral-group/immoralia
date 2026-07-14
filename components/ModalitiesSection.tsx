@@ -92,7 +92,7 @@ export function ModalitiesSection() {
          </div>
 
          <motion.a
-            href="https://procesos.immoralia.es/"
+            href="https://immoralia.es/procesos"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ scale: 0.9, opacity: 0 }}

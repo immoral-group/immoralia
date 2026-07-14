@@ -159,7 +159,7 @@ export function AutomationHero() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center mt-4">
               <a
-                href="https://procesos.immoralia.es/"
+                href="https://immoralia.es/procesos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#001156] hover:bg-[#333] text-white rounded-lg transition-all duration-300 border border-white/10 hover:border-white/30 flex items-center justify-center gap-2 text-sm font-medium pointer-events-auto"

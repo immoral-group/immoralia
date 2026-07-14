@@ -58,7 +58,7 @@ export function Navbar() {
                 Blog
               </motion.a>
               <motion.a
-                href="https://procesos.immoralia.es/"
+                href="https://immoralia.es/procesos"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, x: 20 }}
@@ -108,7 +108,7 @@ export function Navbar() {
               Blog
             </a>
             <a
-              href="https://procesos.immoralia.es/"
+              href="https://immoralia.es/procesos"
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontFamily: 'Roboto, sans-serif', fontWeight: 700 }}
