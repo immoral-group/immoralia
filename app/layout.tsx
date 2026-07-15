@@ -20,25 +20,26 @@ export default function RootLayout({
           <TrackingInjector verticalId={process.env.VERTICAL_ID} />
         )}
 
-        {/* GTM — capa 2: cobertura completa del dominio */}
-        {/* NEXT_PUBLIC_GTM_ID debe tener el mismo valor que 
-            google_tag_manager_id configurado en el panel para esta vertical. */}
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <Script
-            id="gtm-root"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-                f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');
-              `,
-            }}
-          />
-        )}
+        {/* GA4 directo (decisión 14/07/2026, sin GTM): la etiqueta que
+            Google detectaba en immoralia.es reportaba a la propiedad
+            compartida "procesos.immoralia.es" (el Catálogo), mezclando
+            métricas. Propiedad GA4 nueva y dedicada para este vertical
+            (landing + blog + news), mismo patrón que immoral.es e
+            imcontent.es. */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-N6N9X2RGR4"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-N6N9X2RGR4');
+          ` }}
+        />
       </body>
     </html>
   );
